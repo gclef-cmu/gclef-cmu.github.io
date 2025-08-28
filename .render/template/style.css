@@ -171,11 +171,12 @@ table tr {
 }
 
 table tr:nth-child(2n) {
-    background-color: var(--header-bg);
+    background-color: #e9ecef;
 }
 
 table th {
     font-weight: 600;
+    color: #ffffff;
     background-color: var(--header-bg);
 }
 
