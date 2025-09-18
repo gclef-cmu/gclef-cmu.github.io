@@ -166,7 +166,6 @@ In pairwise music preference decisions, we observe that users often listen exten
 
 A core question in our analysis is what listening time represents as a behavioral metric. To investigate whether extended listening time might correlate with a positive preference, we analyzed the win rate of the first-played track, which consistently receives more listening time.
 
-%%% Transpose?
 | Outcome for First-Played Track       | Count | Probability [%] |
 | :----------------------------------- | :---- | :-------------- |
 | **Win**                              | 356   | 33.87           |
