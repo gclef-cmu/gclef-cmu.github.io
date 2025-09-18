@@ -83,7 +83,7 @@ Below are the first official leaderboards from our initial data release, based o
 
 
 ### 🎹 Instrumental Models
-<div style="overflow-x: auto; white-space: nowrap;">
+<div style="width: 100%; overflow-x: auto;">
 
 | Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
 |:----:|:---|:---:|:---:|:---:|:---:|:---|:---|:---|:---:|:---|
@@ -96,7 +96,7 @@ Below are the first official leaderboards from our initial data release, based o
 </div>
 
 ### 🎤 Vocal Models
-<div style="overflow-x: auto; white-space: nowrap;">
+<div style="width: 100%; overflow-x: auto;">
 
 | Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
 |:----:|:---|:---:|:---:|:---:|:---:|:---|:---|:---|:---:|:---|
