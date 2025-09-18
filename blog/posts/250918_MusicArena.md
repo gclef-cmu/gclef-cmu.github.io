@@ -79,6 +79,9 @@ As of **September 18, 2025**, the Music Arena leaderboard is live! It  ranks TTM
 
 We currently offer separate leaderboards for instrumental and vocal models, allowing for fair comparison within specific music generation categories. This live ranking serves as a crucial resource for researchers, developers, and music enthusiasts to track the progress of TTM technology.
 
+Below are the first official leaderboards from our initial data release, based on votes collected from **July 28 to August 31, 2025**.
+
+
 ### 🎹 Instrumental Models
 <div style="overflow-x: auto; white-space: nowrap;">
 
@@ -104,8 +107,6 @@ We currently offer separate leaderboards for instrumental and vocal models, allo
 | 5 | acestep | 660.1 | +75.5 / -121.3 | 178 | 2.89 | ACE Studio | Apache 2.0 | Unspecified | True | Open weights |
 
 </div>
-
-> **Initial Leaderboard Data (July 28 - Aug 31, 2025).** The tables above show the model rankings based on votes collected during *July 28, 2025 - August 31, 2025.*
 
 ![Leaderboard Plot](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3.png)
 > **Figure 3: Music Arena Leaderboard Plots (July 28 - Aug 31, 2025).** The plots for Instrumental (left) and Vocal (right) models are shown side-by-side. Each model is plotted by its Arena Score and Generation Speed (RTF), with colors indicating training data and shapes indicating access type (Open weights vs. Proprietary).
