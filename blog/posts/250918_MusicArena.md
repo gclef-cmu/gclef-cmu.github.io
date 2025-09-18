@@ -109,11 +109,11 @@ Below are the first official leaderboards from our initial data release, based o
 
 ## Initial Data Insights
 
-From our initial data collection period [(July 28 - Aug 31, 2025)](https://drive.google.com/drive/folders/1lnb-zrAh4ny7cfrOYPpKROBr9B6b_pHw), we acquired **1,420** user-initiated battles, **1,051** of which resulted in a valid vote. This data powers our leaderboard and reveals fascinating patterns in user behavior. Here’s what we've learned so far.
+From our initial data collection period [(July 28 - Aug 31, 2025)](https://drive.google.com/drive/folders/1lnb-zrAh4ny7cfrOYPpKROBr9B6b_pHw), we acquired **1,420** user-initiated battles, **1,051** of which resulted in a valid vote. This data powers our leaderboard and reveals new insights into user behavior. Here's what we've learned so far.
 
-### 1. How do people discover music on the platform?
+### 1. How do users write prompts on the platform?
 
-About **27%** of user battles start with a **"🎲 Random Prompt"**, retrieving a [prebaked prompt](https://github.com/gclef-cmu/music-arena/blob/e87b37d8b758b7c9eab239abf02154494488d27e/components/gateway/prebaked.json), while the majority of users write their own creative prompts from scratch. Interestingly, users who write their own prompts are more likely to complete the vote (77% conversion rate) compared to those who use a prebaked prompt (65% conversion rate).
+About **27%** of user battles start with a **"🎲 Random Prompt"**, retrieving a [prebaked prompt](https://github.com/gclef-cmu/music-arena/blob/e87b37d8b758b7c9eab239abf02154494488d27e/components/gateway/prebaked.json), while the majority of users write their own creative prompts from scratch. We find that users who write their own prompts are more likely to complete the vote (77% conversion rate) compared to those who use a prebaked prompt (65% conversion rate).
 
 | Prompt Type           | Total Battles | Voted Battles | Vote Ratio [%] |
 | :-------------------- | :------------ | :------------ | :------------- |
@@ -123,7 +123,7 @@ About **27%** of user battles start with a **"🎲 Random Prompt"**, retrieving 
 
 **Note**: Subsequent analyses in this report focus on the dataset of 1,051 voted battles, unless otherwise specified.
 
-### 2. Listening Order Dominates User Behavior
+### 2. Listening Behavior is Sensitive to Track Order
 
 The next thing we noticed was a stark difference in listening times: users listened to the left track (Track A) far longer than the right track (Track B). Raw data showed high maximum listening times, suggesting some users leave tabs open. To focus on typical behavior, we removed 196 outliers using the Interquartile Range (IQR) method. The statistics for the remaining data, shown below, paint a clearer picture.
 
@@ -135,18 +135,18 @@ The next thing we noticed was a stark difference in listening times: users liste
 | **Max (Post-IQR)**| 88.15       | 46.76       |
 
 ![Listening Data](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig4.png)
-> **Figure 4: Listening time distributions for Track A (left) and Track B (right).** After removing outliers, the histograms show that users tend to listen to Track A longer than B before making a preference decision.
+> **Figure 4: Listening time distributions for Track A (left) and Track B (right).** After removing outliers, the histograms show that users tend to listen to Track A longer than B (median 20.7s vs. 7.1s) before making a preference decision.
 
-Why is Track A listened to so much longer? To investigate, we analyzed the very first "play" action users take in a battle. The analysis of **1,051** valid battles revealed a staggering pattern:
+Why is Track A listened to so much longer? To investigate, we analyzed the very first "play" action users take in a battle. The analysis of **1,051** valid battles revealed an overwhelming (but not unexpected) bias towards users listening to Track A (the left track) in >95% of battles:
 
 | First-Played Track | Count | Probability [%] |
 | :----------------- | :---- | :-------------- |
 | **Track A**        | 1004  | 95.53           |
 | **Track B**        | 47    | 4.47            |
 
-There is a **95.5%** probability that a user will play **Track A** first. This reveals a strong positional bias, suggesting the listening time difference is driven by a behavioral tendency to engage from left to right. This led us to a new hypothesis: **users will listen longer to whichever track they play first, regardless of its position.**
+This led us to a new hypothesis: **users will listen longer to whichever track they play first, regardless of its position.**
 
-We re-categorized all listening data into "First-Played Track" and "Second-Played Track" and ran the analysis again. After removing IQR outliers (203 battles), the findings offer a powerful confirmation.
+We re-categorized all listening data into "First-Played Track" and "Second-Played Track" and ran the analysis again. After removing IQR outliers (203 battles), the findings corroborate this hypothesis: the discrepancy between play counts is even sharper when we analyze this.
 
 | Metric            | First-Played [s] | Second-Played [s] |
 | :---------------- | :--------------- | :---------------- |
@@ -160,7 +160,7 @@ The data clearly shows that users dedicate significantly more time to the track 
 ![Listening Data 2](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig5.png)
 > **Figure 5: Listening time distributions for the First-Played and Second-Played tracks.** After removing IQR outliers, the data clearly shows that the first track a user engages with receives substantially more listening time.
 
-Evaluating the first track is analogous to a **regression problem**; it requires an open-ended assessment of its quality, which imposes a significant cognitive load. However, once that first track establishes an anchor, the task of evaluating the second track transforms into a more efficient **binary classification problem**: "Is this better or worse than the initial anchor?" This relative judgment requires far less cognitive processing, which accounts for the shorter listening times.
+In pairwise music preference decisions, we observe that users often listen extensively to the first track, but only briefly to the second before making a decision. A plausible explanation for this is that the **first track** acts as a **reference point**. Evaluating this initial track appears to require an open-ended assessment of its quality, a task that can demand significant time and mental effort. Once this reference point is established, the evaluation of the **second track** seems to simplify to a more direct, relative comparison: "Is this track better or worse than the one I just heard?" This comparative judgment likely requires **less cognitive effort** and therefore **less listening time**, which may account for the discrepancy observed in our data.
 
 ### 3. Dissecting User Behavior: Engagement vs. Preference
 
@@ -177,7 +177,7 @@ The data indicates a negative relationship between being the longer-played track
 
 This distinction is supported by other observations. For instance, users spend nearly twice as long evaluating vocal tracks as they do instrumental tracks. Furthermore, a direct correlation analysis between listening time and win rate across the entire dataset showed no significant trend. These points lead to a functional definition of our user behavior metrics: Listening Time serves as a proxy for user engagement, while the final vote, or Win Rate, is the direct measure of model performance.
 
-While creating music that holds user attention is an important goal, our data suggests that listening time in a battle context is a complex signal, not just a measure of positive interest.
+While creating music that holds user attention is an important goal, our data suggests that **listening time in a battle context is a complex signal, not just a measure of positive interest**.
 
 ![Model Listening Time](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig6.png)
 > **Figure 6: Listening Time Distribution by Model Category.** The distributions show that users on average spend more time listening to models that generate vocal tracks compared to those that generate instrumental tracks.
@@ -186,9 +186,8 @@ While creating music that holds user attention is an important goal, our data su
 
 To see if users work harder on more difficult comparisons, we analyzed whether engagement increases when two models are closely matched. We measured two key engagement metrics—**total listening time** and the **number of swaps**—against the "closeness" of a battle, defined by the absolute difference between the models' Arena Scores.
 
-After removing outliers (118 battles) using the IQR method, our analysis of **listening time** reveals a statistically significant, albeit very weak, negative correlation (Spearman's rho = -0.082, p-value = 0.012). This suggests that as the performance gap between two models becomes larger (a less "close" battle), users tend to spend slightly less time listening before casting their vote.
+After removing outliers (118 battles) using the IQR method, our analysis of **listening time** reveals a statistically significant, albeit very weak, negative correlation (Spearman's rho = -0.082, p-value = 0.012). This suggests that as the performance gap between two models becomes larger (i.e., one model may be clearly better than the other), users tend to spend slightly *less* time listening before casting their vote.
 
-% Change Total Listening Time -> Second-Played Track Listening TIme
 ![Correlation](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig7.png)
 > **Figure 7: The correlation between Arena Score difference and total listening time.** Each dot represents a single battle after outliers were removed using the IQR method. While there is a high variance in listening times, the regression line (red dashes) shows a slight negative trend.
 
@@ -197,7 +196,7 @@ We observed a similar trend with the **number of swaps**. The correlation is als
 ![Correlation](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig8.png)
 > **Figure 8: The correlation between Arena Score difference and the number of swaps.** Each dot represents a single battle. While there is a high variance in number of swaps, the regression line (blue dashes) shows a slight negative trend.
 
-This suggests users adapt their listening strategy for harder decisions. While a single swap is the norm, closer battles prompt a more careful, back-and-forth comparison.
+This suggests users adapt their listening strategy for harder decisions. While a single swap is the norm, closer battles prompt a more careful, back-and-forth comparison. The table below shows the general distribution of swap counts across all voted-on battles:
 
 | Swap(s) | Probability [%] |
 | :------ | :-------------- |
@@ -208,9 +207,9 @@ This suggests users adapt their listening strategy for harder decisions. While a
 
 While not a strong effect, these findings support the hypothesis that our fine-grained listening data successfully captures a signal related to the perceived difficulty of the preference decision.
 
-### 5. Who is using Music Arena?
+### 5. User engagement on Music Arena
 
-Our analysis shows a classic "long-tail" distribution of user engagement. A large number of users try the platform by casting just a few votes, while a dedicated group of "power users" contribute a significant number of votes. This mix of casual and dedicated users provides a broad and deep set of preference data.
+Our analysis shows a long-tail distribution of user engagement. A large number of users try the platform by casting just a few votes, while a dedicated group of "power users" contribute a significant number of votes. This mix of casual and dedicated users provides a broad and deep set of preference data.
 
 The table below shows the distribution of votes submitted per user. For example, **192 users** have submitted exactly **one vote**, while **the most "power user"** has submitted **49 votes**.
 
