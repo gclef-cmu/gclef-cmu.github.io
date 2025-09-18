@@ -231,8 +231,6 @@ The table below shows the distribution of votes submitted per user based on 1051
 
 Analyzing the **804** user-written prompts from valid, voted-on battles reveals a clear trend: the vast majority are concise and to the point. The raw data shows a median prompt length of just **7 words**, but the average is skewed higher by a long tail of very descriptive prompts, with a maximum length of 1000 words.
 
-% Data release (another csv? focusing on the text prompt)
-
 | Metric (Raw Data) | Prompt Length [words] |
 | :---------------- | :-------------------- |
 | **count**         | 804                   |
@@ -257,7 +255,7 @@ This confirms that while some users provide detailed instructions, the typical M
 
 ### 7. What kind of music do users create?
 
-By analyzing the **804** user-written prompts from valid, voted battles, we can see what our users are creating. The results show a mix of genres, instruments, and moods.
+By analyzing the **804** user-written prompts from valid, voted battles, we can see what our users are creating. The results show a mix of genres, instruments, and moods. 
 
 | Keyword    | Frequency |
 | :--------- | :-------- |
@@ -277,9 +275,9 @@ Requests for specific instruments are very common, with "bass" (101), "vocals" (
 
 ### 8. How do users react to model generations?
 
-Alongside battle data, we also offer users the opportunity to provide written feedback on the generated music. With this feedback, we hope to both get a better understanding of the models' performance and determine what aspects of model generation are important to users so we can tailor our interface to better understand these areas. 
+Alongside battle data, we also offer users the opportunity to provide written feedback on the generated music. With this feedback, we hope to both get a better understanding of the models' performance, with a longer term goal of tailoring our evaluation platform to better assess these aspects.
 
-We received **147 written feedbacks** on model generations, which we further analyze using an LLM (Gemini 2.5 Flash). We ask the LLM to label each feedback with a sentiment, either positive or negative, as well as a category, either Generation Quality, Prompt Adherence, or General (i.e. non-descriptive) Feedback. Examples of each type of feedback are shown below:
+We received **147 written feedbacks** on model generations, which we further analyze using an LLM (Gemini 2.5 Flash). We ask the LLM to label each feedback with a sentiment, either positive or negative, as well as a category, either Generation Quality, Prompt Adherence, or Musicallaneous (i.e. non-descriptive) Feedback. These categories were first identified by us, then confirmed to be the most salient categorization by the LLM. Examples of each type of feedback are shown below:
 
 
 | Example Feedback            | <span style="color:green">Positive | <span style="color:red">Negative |
@@ -298,7 +296,7 @@ We find that a majority of feedback (exactly 2 out of every 3) is **negative**, 
 
 Finally, we also group feedback by model and find that the overall rate of positive feedback correlates with Arena score. However, grouping these model feedbacks by category also yields some interesting discoveries, for instance, all feedback relating to prompt adherence for the Magenta RealTime model is negative, while all feedback relating to generation quality is positive, indicating that this system is good at creating high-quality generations, but fails to meet the prompting expectations of users. Prompt adherence generally does increase with higher win rate models, while generation quality feedback increases significantly for models with a win rate of over 50%.
 
-![Positive feedback rates by model](figures/feedbackdot.png) ![Positive feedback rates by model (Prompt Adherence Feedback)](figures/feedbackpromptdot.png) ![Positive feedback rates by model (Generation Quality Feedback)](figures/feedbackgendot.png)
+![Positive feedback rates by model](figures/250918_MusicArena_fig11.png)
 > **Figure 11: Plots of win rate vs positive feedback percentage for all models, also separated by different types of feedback**
 
 -----
