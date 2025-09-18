@@ -97,10 +97,10 @@ We currently offer separate leaderboards for instrumental and vocal models, allo
 | 4 | preview-jerboa | 1034.4 | +92.6 / -80.8 | 88 | 5.61 | Hidden | Closed | Unspecified | True | Proprietary |
 | 5 | acestep | 660.1 | +75.5 / -121.3 | 178 | 2.89 | ACE Studio | Apache 2.0 | Unspecified | True | Open weights |
 
-![Instrumental Models](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3-1.png)
-![Vocal Models](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3-2.png)
+> **Initial Leaderboard Data (July 28 - Aug 31, 2025).** The tables above show the model rankings based on votes collected during *July 28, 2025 - August 31, 2025.*
 
-> **Initial Leaderboard Data (July 28 - Aug 31, 2025).** The tables and plots above show the model rankings based on votes collected during *July 28, 2025 - August 31, 2025.*
+![Leaderboard Plot](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3.png)
+> **Figure 3: Music Arena Leaderboard Plots (July 28 - Aug 31, 2025).** The plots for Instrumental (left) and Vocal (right) models are shown side-by-side. Each model is plotted by its Arena Score and Generation Speed (RTF), with colors indicating training data and shapes indicating access type (Open weights vs. Proprietary).
 
 -----
 
