@@ -275,6 +275,32 @@ Requests for specific instruments are very common, with "bass" (101), "vocals" (
 ![Frequent Keywords](figures/250918_MusicArena_fig10.png)
 > **Figure 10: A word cloud of the most frequent keywords in user prompts from voted battles.**
 
+### 8. How do users react to model generations?
+
+Alongside battle data, we also offer users the opportunity to provide written feedback on the generated music. With this feedback, we hope to both get a better understanding of the models' performance and determine what aspects of model generation are important to users so we can tailor our interface to better understand these areas. 
+
+We received **147 written feedbacks** on model generations, which we further analyze using an LLM (Gemini 2.5 Flash). We ask the LLM to label each feedback with a sentiment, either positive or negative, as well as a category, either Generation Quality, Prompt Adherence, or General (i.e. non-descriptive) Feedback. Examples of each type of feedback are shown below:
+
+
+| Example Feedback            | <span style="color:green">Positive | <span style="color:red">Negative |
+| :---------------- | :--------------- | :---------------- |
+| **Generation Quality**       | <span style="color:green">"good voice quality" | <span style="color:red">"It has sharp sound that is quite ear-piercing" |
+| **Prompt Adherence**        | <span style="color:green">"Good lyrics and followed prompt well" | <span style="color:red">"it had nothing to do with what i asked for" |
+| **Miscallaneous Feedback**           | <span style="color:green">"The lines were pretty fire and the beat was good too" | <span style="color:red">"This isn't even music" |
+
+We find that a majority of feedback (exactly 2 out of every 3) is **negative**, indicating that users are more likely to give feedback when the models do not behave as they may wish. We also find that users are more likely to provide positive feedback for generation quality (42.6% positive comments), and less likely for prompt adherence (25.8% positive comments).
+
+| Type                   |   Total |   Positive [%] |
+|:-----------------------|--------:|---------------:|
+| **Prompt Adherence**   |      62 |           25.8 |
+| **Miscallaneous Feedback**  |      24 |           29.2 |
+| **Generation Quality** |      61 |           42.6 |
+
+Finally, we also group feedback by model and find that the overall rate of positive feedback correlates with Arena score. However, grouping these model feedbacks by category also yields some interesting discoveries, for instance, all feedback relating to prompt adherence for the Magenta RealTime model is negative, while all feedback relating to generation quality is positive, indicating that this system is good at creating high-quality generations, but fails to meet the prompting expectations of users. Prompt adherence generally does increase with higher win rate models, while generation quality feedback increases significantly for models with a win rate of over 50%.
+
+![Positive feedback rates by model](figures/feedbackdot.png) ![Positive feedback rates by model (Prompt Adherence Feedback)](figures/feedbackpromptdot.png) ![Positive feedback rates by model (Generation Quality Feedback)](figures/feedbackgendot.png)
+> **Figure 11: Plots of win rate vs positive feedback percentage for all models, also separated by different types of feedback**
+
 -----
 
 ## What’s Next?
