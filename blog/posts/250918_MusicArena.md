@@ -230,6 +230,9 @@ The table below shows the distribution of votes submitted per user based on 1051
 
 ### 6. How descriptive are user prompts?
 
+![Prompt Lengths](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig10.png)
+> **Figure 10: Distribution of User Prompt Lengths (from Voted Battles).** The histogram shows the distribution after outliers were removed using the IQR method, revealing that the vast majority of user prompts are under 33 words long.
+
 Analyzing the **804** user-written prompts from valid, voted-on battles reveals a clear trend: the vast majority are concise and to the point. The raw data shows a median prompt length of just **7 words**, but the average is skewed higher by a long tail of very descriptive prompts, with a maximum length of 1000 words.
 
 % Data release (another csv? focusing on the text prompt)
@@ -256,12 +259,9 @@ To get a more accurate picture of typical behavior, we removed extreme outliers 
 
 This confirms that while some users provide detailed instructions, the typical Music Arena user prefers to express their creative ideas in just a few words.
 
-![Prompt Lengths](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig10.png)
-> **Figure 10: Distribution of User Prompt Lengths (from Voted Battles).** The histogram shows the distribution after outliers were removed using the IQR method, revealing that the vast majority of user prompts are under 33 words long.
-
 ### 7. What kind of music do users create?
 
-By analyzing the **804** user-written prompts from valid, voted battles, we can see what our users are creating. The results show a fascinating mix of genres, instruments, and moods.
+By analyzing the **804** user-written prompts from valid, voted battles, we can see what our users are creating. The results show a mix of genres, instruments, and moods.
 
 | Keyword    | Frequency |
 | :--------- | :-------- |
