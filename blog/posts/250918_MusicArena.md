@@ -211,18 +211,22 @@ While not a strong effect, these findings support the hypothesis that our fine-g
 
 Our analysis shows a long-tail distribution of user engagement. A large number of users try the platform by casting just a few votes, while a dedicated group of "power users" contribute a significant number of votes. This mix of casual and dedicated users provides a broad and deep set of preference data.
 
-The table below shows the distribution of votes submitted per user. For example, **192 users** have submitted exactly **one vote**, while **the most "power user"** has submitted **49 votes**.
+The table below shows the distribution of votes submitted per user based on 1051 valid votes from 373 unique users. For example, **193 users** have submitted exactly **one vote**, while a small number of highly engaged users are responsible for dozens of submissions. The most "power user" has submitted **49 votes**.
+
 
 | Number of Votes | Number of Users |
 | :-------------- | :-------------- |
-| **1**           | 192             |
+| **1**           | 193             |
 | **2**           | 72              |
 | **3**           | 44              |
-| **4**           | 25              |
+| **4**           | 24              |
 | **5**           | 8               |
 | **6-10**        | 18              |
-| **11-20**       | 7               |
-| **21-50**       | 3               |
+| **11-20**       | 10              |
+| **21-50**       | 4               |
+
+![User Engagement - Stay Duration](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig19.png)
+> **Figure 9: Correlation between User Engagement and Platform Stay Duration.** Each dot represents a unique user with more than one vote. The x-axis (log scale) shows the total number of votes submitted, while the y-axis shows the time in hours between their first and last vote. The trend suggests that users who cast more votes tend to do so over a longer period of time.
 
 ### 6. How descriptive are user prompts?
 
@@ -252,8 +256,8 @@ To get a more accurate picture of typical behavior, we removed extreme outliers 
 
 This confirms that while some users provide detailed instructions, the typical Music Arena user prefers to express their creative ideas in just a few words.
 
-![Prompt Lengths](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig9.png)
-> **Figure 9: Distribution of User Prompt Lengths (from Voted Battles).** The histogram shows the distribution after outliers were removed using the IQR method, revealing that the vast majority of user prompts are under 33 words long.
+![Prompt Lengths](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig10.png)
+> **Figure 10: Distribution of User Prompt Lengths (from Voted Battles).** The histogram shows the distribution after outliers were removed using the IQR method, revealing that the vast majority of user prompts are under 33 words long.
 
 ### 7. What kind of music do users create?
 
@@ -272,8 +276,8 @@ By analyzing the **804** user-written prompts from valid, voted battles, we can 
 
 Requests for specific instruments are very common, with "bass" (101), "vocals" (81), and "piano" (70) appearing frequently. Popular genres include "pop" (98) and "rock" (69). Users also provide detailed creative direction, using moods like "dark" (66) and musical descriptors such as "melodic" (66) and "chorus" (65). This analysis gives us a direct window into the creative intentions of our users.
 
-![Frequent Keywords](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig10.png)
-> **Figure 10: A word cloud of the most frequent keywords in user prompts from voted battles.**
+![Frequent Keywords](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig11.png)
+> **Figure 11: A word cloud of the most frequent keywords in user prompts from voted battles.**
 
 -----
 
