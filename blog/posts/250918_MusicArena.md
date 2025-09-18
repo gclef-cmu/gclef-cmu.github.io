@@ -303,4 +303,4 @@ We hope that Music Arena will bring new clarity to TTM evaluation and provide a 
 > ```
 
 **Acknowledgements and Disclosure of Funding**
-The development of Music Arena was supported by [Sony AI](https://ai.sony/). We extend our sincere thanks to our commercial contacts at [Riffusion](https://classic.riffusion.com/), [Stability AI](https://stability.ai/), [Google DeepMind](https://deepmind.google/), and [Suno](https://suno.com/) for productive discussions that informed the key features and policies of Music Arena.
+Music Arena is supported by funding from [Sony AI](https://ai.sony/), with informal and pro-bono assistance provided by [LMArena](https://lmarena.ai/). We extend our sincere thanks to our commercial contacts at [Riffusion](https://classic.riffusion.com/), [Stability AI](https://stability.ai/), [Google DeepMind](https://deepmind.google/), and [Suno](https://suno.com/) for productive discussions that informed the key features and policies of Music Arena. Music Arena is approved by CMU's Institutional Review Board under Protocol STUDY2024_00000489.
