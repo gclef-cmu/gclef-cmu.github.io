@@ -1,6 +1,6 @@
 # Music Arena: Ranking AI Music Models with Your Votes
 *September 18, 2025*
-**Contributors:** [Yonghyun Kim](https://yonghyunk1m.com), [Nathan Pruyne](), [Chris Donahue](https://chrisdonahue.com/). 
+**Contributors:** [Yonghyun Kim](https://yonghyunk1m.com), [Nathan Pruyne](https://nathanpruyne.com/), [Chris Donahue](https://chrisdonahue.com/). 
 For the full list of Music Arena authors and contributors, see our [research paper](https://arxiv.org/abs/2507.20900).
 
 [[Music Arena]](https://music-arena.org)  [[Paper]](https://arxiv.org/abs/2507.20900) [[Code]](https://github.com/gclef-cmu/music-arena) [[Dataset]](https://drive.google.com/drive/folders/1Dkd3PSBf4u2Cw48fZj-B8yvulan5LyPl)
