@@ -112,64 +112,65 @@ We currently offer separate leaderboards for instrumental and vocal models, allo
 </style>
 
 <script>
-  // Raw URLs for the TSV files on GitHub
-  const instrumentalUrl = 'https://raw.githubusercontent.com/yonghyunk1m/music-arena/main/leaderboard/outputs/leaderboards/instrumental_leaderboard_20250728_to_20250831.tsv';
-  const vocalUrl = 'https://raw.githubusercontent.com/yonghyunk1m/music-arena/main/leaderboard/outputs/leaderboards/vocal_leaderboard_20250728_to_20250831.tsv';
+  (function() {
+    // GitHub에 있는 TSV 파일의 Raw URL
+    const instrumentalUrl = 'https://raw.githubusercontent.com/yonghyunk1m/music-arena/main/leaderboard/outputs/leaderboards/instrumental_leaderboard_20250728_to_20250831.tsv';
+    const vocalUrl = 'https://raw.githubusercontent.com/yonghyunk1m/music-arena/main/leaderboard/outputs/leaderboards/vocal_leaderboard_20250728_to_20250831.tsv';
 
-  /**
-   * Converts TSV text data into an HTML table string.
-   */
-  function tsvToHtmlTable(tsv) {
-    const rows = tsv.trim().split('\n').map(row => row.split('\t'));
-    if (rows.length === 0) return '<p>No data available.</p>';
-    
-    let html = '<div class="leaderboard-table-wrapper"><table>';
-    
-    // Create table header
-    const headers = rows.shift(); // Use the first row as the header
-    html += '<thead><tr>';
-    headers.forEach(header => {
-      // Replace underscores with spaces for better readability
-      html += `<th>${header.replace(/_/g, ' ')}</th>`;
-    });
-    html += '</tr></thead>';
-    
-    // Create table body
-    html += '<tbody>';
-    rows.forEach(row => {
-      html += '<tr>';
-      row.forEach(cell => {
-        html += `<td>${cell}</td>`;
+    /**
+     * TSV 텍스트 데이터를 HTML 테이블 문자열로 변환하는 함수
+     */
+    function tsvToHtmlTable(tsv) {
+      const rows = tsv.trim().split('\n').map(row => row.split('\t'));
+      if (rows.length < 2) return '<p>No data available.</p>';
+      
+      let html = '<div class="leaderboard-table-wrapper"><table>';
+      
+      const headers = rows.shift();
+      html += '<thead><tr>';
+      headers.forEach(header => {
+        html += `<th>${header.replace(/_/g, ' ')}</th>`;
       });
-      html += '</tr>';
-    });
-    html += '</tbody></table></div>';
-    return html;
-  }
-
-  /**
-   * Fetches data from a URL and displays it as a table in a specified container.
-   */
-  async function displayLeaderboard(url, containerId) {
-    const container = document.getElementById(containerId);
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const tsvData = await response.text();
-      container.innerHTML = tsvToHtmlTable(tsvData);
-    } catch (error) {
-      container.innerHTML = '<p>Error: Could not load leaderboard data.</p>';
-      console.error(`Failed to load data for ${containerId}:`, error);
+      html += '</tr></thead>';
+      
+      html += '<tbody>';
+      rows.forEach(row => {
+        html += '<tr>';
+        row.forEach(cell => {
+          html += `<td>${cell}</td>`;
+        });
+        html += '</tr>';
+      });
+      html += '</tbody></table></div>';
+      return html;
     }
-  }
 
-  // Run the script after the page content is fully loaded
-  document.addEventListener('DOMContentLoaded', () => {
+    /**
+     * URL에서 데이터를 가져와 지정된 ID를 가진 요소에 테이블을 표시하는 함수
+     */
+    async function displayLeaderboard(url, containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) {
+          console.error(`Container with ID "${containerId}" not found.`);
+          return;
+      }
+      try {
+        const response = await fetch(url + '?t=' + new Date().getTime()); // 캐시 방지
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const tsvData = await response.text();
+        container.innerHTML = tsvToHtmlTable(tsvData);
+      } catch (error) {
+        container.innerHTML = '<p>Error: Could not load leaderboard data.</p>';
+        console.error(`Failed to load data for ${containerId}:`, error);
+      }
+    }
+
+    // 함수를 바로 호출하여 실행
     displayLeaderboard(instrumentalUrl, 'instrumental-leaderboard-container');
     displayLeaderboard(vocalUrl, 'vocal-leaderboard-container');
-  });
+  })();
 </script>
 
 ![Leaderbaord](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3.png)
