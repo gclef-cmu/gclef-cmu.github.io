@@ -34,7 +34,7 @@ The quality of music is inherently subjective. While several automatic evaluatio
 
 Music Arena is designed to overcome these challenges by creating a centralized, standardized, and scalable evaluation platform that is open to everyone.
 
-![Data Lifecycle](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig1.png)
+![Data Lifecycle](figures/250918_MusicArena_fig1.png)
 > **Figure 1: Music Arena data lifecycle.** The platform consists of a Frontend for user interaction, a Backend that orchestrates generation from various Model Endpoints, and a Database to store results.
 
 -----
@@ -60,7 +60,7 @@ Music is consumed over time. A simple *"A is better than B"* vote doesn't tell t
 
 This detailed data provides deeper insights into *why* users prefer one piece of music over another.
 
-![Music Arena UI](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig2.png)
+![Music Arena UI](figures/250918_MusicArena_fig2.png)
 > **Figure 2: An example of the Music Arena user interface.** After voting, users can see model information and generation stats. They can download the preferred music and optionally submit their reason of preference and general feedback on the platform.
 
 -----
@@ -102,7 +102,7 @@ Below are the first official leaderboards from our initial data release, based o
 | 4 | preview-jerboa | 1034.4 | +92.6 / -80.8 | 88 | 5.61 | Hidden | Closed | Unspecified | True | Proprietary |
 | 5 | acestep | 660.1 | +75.5 / -121.3 | 178 | 2.89 | ACE Studio | Apache 2.0 | Unspecified | True | Open weights |
 
-![Leaderboard Plot](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3.png)
+![Leaderboard Plot](figures/250918_MusicArena_fig3.png)
 > **Figure 3: Music Arena Leaderboard Plots (July 28 - Aug 31, 2025).** The plots for Instrumental (left) and Vocal (right) models are shown side-by-side. Each model is plotted by its Arena Score and Generation Speed (RTF), with colors indicating training data and shapes indicating access type (Open weights vs. Proprietary).
 
 -----
@@ -134,7 +134,7 @@ The next thing we noticed was a stark difference in listening times: users liste
 | **Min**           | 4.03        | 4.02        |
 | **Max (Post-IQR)**| 88.15       | 46.76       |
 
-![Listening Data](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig4.png)
+![Listening Data](figures/250918_MusicArena_fig4.png)
 > **Figure 4: Listening time distributions for Track A (left) and Track B (right).** After removing outliers, the histograms show that users tend to listen to Track A longer than B (median 20.7s vs. 7.1s) before making a preference decision.
 
 Why is Track A listened to so much longer? To investigate, we analyzed the very first "play" action users take in a battle. The analysis of **1,051** valid battles revealed an overwhelming (but not unexpected) bias towards users listening to Track A (the left track) in >95% of battles:
@@ -157,7 +157,7 @@ We re-categorized all listening data into "First-Played Track" and "Second-Playe
 
 The data clearly shows that users dedicate significantly more time to the track they listen to first—more than double on average (26.4s vs. 10.8s).
 
-![Listening Data 2](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig5.png)
+![Listening Data 2](figures/250918_MusicArena_fig5.png)
 > **Figure 5: Listening time distributions for the First-Played and Second-Played tracks.** After removing IQR outliers, the data clearly shows that the first track a user engages with receives substantially more listening time.
 
 In pairwise music preference decisions, we observe that users often listen extensively to the first track, but only briefly to the second before making a decision. A plausible explanation for this is that the **first track** acts as a **reference point**. Evaluating this initial track appears to require an open-ended assessment of its quality, a task that can demand significant time and mental effort. Once this reference point is established, the evaluation of the **second track** seems to simplify to a more direct, relative comparison: "Is this track better or worse than the one I just heard?" This comparative judgment likely requires **less cognitive effort** and therefore **less listening time**, which may account for the discrepancy observed in our data.
@@ -178,7 +178,7 @@ This distinction is supported by other observations. For instance, users spend n
 
 While creating music that holds user attention is an important goal, our data suggests that **listening time in a battle context is a complex signal, not just a measure of positive interest**.
 
-![Model Listening Time](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig6.png)
+![Model Listening Time](figures/250918_MusicArena_fig6.png)
 > **Figure 6: Listening Time Distribution by Model Category.** The distributions show that users on average spend more time listening to models that generate vocal tracks compared to those that generate instrumental tracks.
 
 ### 4. Do Closer Battles Lead to Deeper Engagement?
@@ -187,12 +187,12 @@ To see if users work harder on more difficult comparisons, we analyzed whether e
 
 After removing outliers (118 battles) using the IQR method, our analysis of **listening time** reveals a statistically significant, albeit very weak, negative correlation (Spearman's rho = -0.082, p-value = 0.012). This suggests that as the performance gap between two models becomes larger (i.e., one model may be clearly better than the other), users tend to spend slightly *less* time listening before casting their vote.
 
-![Correlation](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig7.png)
+![Correlation](figures/250918_MusicArena_fig7.png)
 > **Figure 7: The correlation between Arena Score difference and total listening time.** Each dot represents a single battle after outliers were removed using the IQR method. While there is a high variance in listening times, the regression line (red dashes) shows a slight negative trend.
 
 We observed a similar trend with the **number of swaps**. The correlation is also slightly negative (Spearman's rho = -0.097, p-value = 0.002), indicating that users switch back and forth slightly more often when models are closely matched, demanding more effort to make a decision.
 
-![Correlation](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig8.png)
+![Correlation](figures/250918_MusicArena_fig8.png)
 > **Figure 8: The correlation between Arena Score difference and the number of swaps.** Each dot represents a single battle. While there is a high variance in number of swaps, the regression line (blue dashes) shows a slight negative trend.
 
 This suggests users adapt their listening strategy for harder decisions. While a single swap is the norm, closer battles prompt a more careful, back-and-forth comparison. The table below shows the general distribution of swap counts across all voted-on battles:
@@ -226,7 +226,7 @@ The table below shows the distribution of votes submitted per user based on 1051
 
 ### 6. How descriptive are user prompts?
 
-![Prompt Lengths](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig9.png)
+![Prompt Lengths](figures/250918_MusicArena_fig9.png)
 > **Figure 9: Distribution of User Prompt Lengths (from Voted Battles).** The histogram shows the distribution after outliers were removed using the IQR method, revealing that the vast majority of user prompts are under 33 words long.
 
 Analyzing the **804** user-written prompts from valid, voted-on battles reveals a clear trend: the vast majority are concise and to the point. The raw data shows a median prompt length of just **7 words**, but the average is skewed higher by a long tail of very descriptive prompts, with a maximum length of 1000 words.
@@ -272,7 +272,7 @@ By analyzing the **804** user-written prompts from valid, voted battles, we can 
 
 Requests for specific instruments are very common, with "bass" (101), "vocals" (81), and "piano" (70) appearing frequently. Popular genres include "pop" (98) and "rock" (69). Users also provide detailed creative direction, using moods like "dark" (66) and musical descriptors such as "melodic" (66) and "chorus" (65). This analysis gives us a direct window into the creative intentions of our users.
 
-![Frequent Keywords](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig10.png)
+![Frequent Keywords](figures/250918_MusicArena_fig10.png)
 > **Figure 10: A word cloud of the most frequent keywords in user prompts from voted battles.**
 
 -----
