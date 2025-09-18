@@ -97,13 +97,13 @@ We currently offer separate leaderboards for instrumental and vocal models, allo
 | 4 | preview-jerboa | 1034.4 | +92.6 / -80.8 | 88 | 5.61 | Hidden | Closed | Unspecified | True | Proprietary |
 | 5 | acestep | 660.1 | +75.5 / -121.3 | 178 | 2.89 | ACE Studio | Apache 2.0 | Unspecified | True | Open weights |
 
-<div style="display: flex; gap: 15px; align-items: flex-start;">
-<div style="flex: 1;">
-<img src="https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3-1.png" alt="Instrumental Models Plot" style="width: 100%; display: block;">
-</div>
-<div style="flex: 1;">
-<img src="https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3-2.png" alt="Vocal Models Plot" style="width: 100%; display: block;">
-</div>
+<div style="display: flex; gap: 15px; align-items: flex-start;" markdown="0">
+  <div style="flex: 1;">
+    <img src="https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3-1.png" alt="Instrumental Models Plot" style="width: 100%; display: block;">
+  </div>
+  <div style="flex: 1;">
+    <img src="https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3-2.png" alt="Vocal Models Plot" style="width: 100%; display: block;">
+  </div>
 </div>
 
 > **Initial Leaderboard Data (July 28 - Aug 31, 2025).** The tables and plots above show the model rankings based on votes collected during *July 28, 2025 - August 31, 2025.*
