@@ -80,6 +80,8 @@ As of **September 18, 2025**, the Music Arena leaderboard is live! It  ranks TTM
 We currently offer separate leaderboards for instrumental and vocal models, allowing for fair comparison within specific music generation categories. This live ranking serves as a crucial resource for researchers, developers, and music enthusiasts to track the progress of TTM technology.
 
 ### 🎹 Instrumental Models
+<div style="overflow-x: auto; white-space: nowrap;">
+
 | Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
 |:----:|:---|:---:|:---:|:---:|:---:|:---|:---|:---|:---:|:---|
 | 1 | riffusion-fuzz-1-1 | 1250.8 | +52.0 / -45.5 | 252 | 6.01 | Riffusion | Closed | Commercial | True | Proprietary |
@@ -88,7 +90,11 @@ We currently offer separate leaderboards for instrumental and vocal models, allo
 | 4 | sao | 924.7 | +45.7 / -41.5 | 286 | 2.63 | Stability AI | STAI Community | Open | False | Open weights |
 | 5 | sao-small | 782.4 | +50.9 / -62.2 | 292 | 12.79 | Stability AI | STAI Community | Open | False | Open weights |
 
+</div>
+
 ### 🎤 Vocal Models
+<div style="overflow-x: auto; white-space: nowrap;">
+
 | Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
 |:----:|:---|:---:|:---:|:---:|:---:|:---|:---|:---|:---:|:---|
 | 1 | riffusion-fuzz-1-0 | 1172.5 | +99.1 / -62.7 | 144 | 5.6 | Riffusion | Closed | Commercial | True | Proprietary |
@@ -96,6 +102,8 @@ We currently offer separate leaderboards for instrumental and vocal models, allo
 | 3 | preview-ocelot | 1045.7 | +75.9 / -82.9 | 90 | 5.42 | Hidden | Closed | Unspecified | True | Proprietary |
 | 4 | preview-jerboa | 1034.4 | +92.6 / -80.8 | 88 | 5.61 | Hidden | Closed | Unspecified | True | Proprietary |
 | 5 | acestep | 660.1 | +75.5 / -121.3 | 178 | 2.89 | ACE Studio | Apache 2.0 | Unspecified | True | Open weights |
+
+</div>
 
 > **Initial Leaderboard Data (July 28 - Aug 31, 2025).** The tables above show the model rankings based on votes collected during *July 28, 2025 - August 31, 2025.*
 
@@ -163,7 +171,7 @@ Evaluating the first track is analogous to a **regression problem**; it requires
 
 A core question in our analysis is what listening time represents as a behavioral metric. To investigate whether extended listening time might correlate with a positive preference, we analyzed the win rate of the first-played track, which consistently receives more listening time.
 
-%# Transpose?
+%%% Transpose?
 | Outcome for First-Played Track       | Count | Probability [%] |
 | :----------------------------------- | :---- | :-------------- |
 | **Win**                              | 356   | 33.87           |
