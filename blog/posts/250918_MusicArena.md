@@ -1,6 +1,6 @@
 # Music Arena: Ranking AI Music Models with Your Votes
 *September 18, 2025*
-**Contributors:** [Yonghyun Kim](https://yonghyunk1m.com), [Nathan Pruyne](https://nathanpruyne.com/), [Chris Donahue](https://chrisdonahue.com/). 
+**Blog post authors:** [Yonghyun Kim](https://yonghyunk1m.com), [Nathan Pruyne](https://nathanpruyne.com/), [Chris Donahue](https://chrisdonahue.com/). 
 For the full list of Music Arena authors and contributors, see our [research paper](https://arxiv.org/abs/2507.20900).
 
 [[Music Arena]](https://music-arena.org)  [[Paper]](https://arxiv.org/abs/2507.20900) [[Code]](https://github.com/gclef-cmu/music-arena) [[Dataset]](https://drive.google.com/drive/folders/1Dkd3PSBf4u2Cw48fZj-B8yvulan5LyPl)
@@ -86,7 +86,7 @@ Below are the first official leaderboards from our initial data release, based o
 
 | Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
 |:----|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
-| 1 | riffusion-fuzz-1-1 | 1250.8 | +52.0 / -45.5 | 252 | 6.01 | Riffusion | Closed | Commercial | True | Proprietary |
+| 1 | riffusion-fuzz-1-1 | 1250.8 | +52.0 / -45.5 | 252 | 6.01 | Riffusion | Closed | Unspecified | True | Proprietary |
 | 2 | magenta-rt-large | 1113.6 | +56.5 / -57.2 | 276 | 1.01 | Google DeepMind | Apache 2.0 | Unspecified | False | Open weights |
 | 3 | musicgen-small | 928.5 | +40.4 / -46.7 | 278 | 0.86 | Meta | CC-BY-NC 4.0 | Stock | False | Open weights |
 | 4 | sao | 924.7 | +45.7 / -41.5 | 286 | 2.63 | Stability AI | STAI Community | Open | False | Open weights |
@@ -96,8 +96,8 @@ Below are the first official leaderboards from our initial data release, based o
 
 | Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
 |:----|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
-| 1 | riffusion-fuzz-1-0 | 1172.5 | +99.1 / -62.7 | 144 | 5.6 | Riffusion | Closed | Commercial | True | Proprietary |
-| 2 | riffusion-fuzz-1-1 | 1087.3 | +40.8 / -47.2 | 218 | 5.25 | Riffusion | Closed | Commercial | True | Proprietary |
+| 1 | riffusion-fuzz-1-0 | 1172.5 | +99.1 / -62.7 | 144 | 5.6 | Riffusion | Closed | Unspecified | True | Proprietary |
+| 2 | riffusion-fuzz-1-1 | 1087.3 | +40.8 / -47.2 | 218 | 5.25 | Riffusion | Closed | Unspecified | True | Proprietary |
 | 3 | preview-ocelot | 1045.7 | +75.9 / -82.9 | 90 | 5.42 | Hidden | Closed | Unspecified | True | Proprietary |
 | 4 | preview-jerboa | 1034.4 | +92.6 / -80.8 | 88 | 5.61 | Hidden | Closed | Unspecified | True | Proprietary |
 | 5 | acestep | 660.1 | +75.5 / -121.3 | 178 | 2.89 | ACE Studio | Apache 2.0 | Unspecified | True | Open weights |
@@ -224,13 +224,10 @@ The table below shows the distribution of votes submitted per user based on 1051
 | **11-20**       | 10              |
 | **21-50**       | 4               |
 
-![User Engagement - Stay Duration](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig9.png)
-> **Figure 9: Correlation between User Engagement and Platform Stay Duration.** Each dot represents a unique user with more than one vote. The x-axis (log scale) shows the total number of votes submitted, while the y-axis shows the time in hours between their first and last vote. The trend suggests that users who cast more votes tend to do so over a longer period of time.
-
 ### 6. How descriptive are user prompts?
 
-![Prompt Lengths](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig10.png)
-> **Figure 10: Distribution of User Prompt Lengths (from Voted Battles).** The histogram shows the distribution after outliers were removed using the IQR method, revealing that the vast majority of user prompts are under 33 words long.
+![Prompt Lengths](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig9.png)
+> **Figure 9: Distribution of User Prompt Lengths (from Voted Battles).** The histogram shows the distribution after outliers were removed using the IQR method, revealing that the vast majority of user prompts are under 33 words long.
 
 Analyzing the **804** user-written prompts from valid, voted-on battles reveals a clear trend: the vast majority are concise and to the point. The raw data shows a median prompt length of just **7 words**, but the average is skewed higher by a long tail of very descriptive prompts, with a maximum length of 1000 words.
 
@@ -275,8 +272,8 @@ By analyzing the **804** user-written prompts from valid, voted battles, we can 
 
 Requests for specific instruments are very common, with "bass" (101), "vocals" (81), and "piano" (70) appearing frequently. Popular genres include "pop" (98) and "rock" (69). Users also provide detailed creative direction, using moods like "dark" (66) and musical descriptors such as "melodic" (66) and "chorus" (65). This analysis gives us a direct window into the creative intentions of our users.
 
-![Frequent Keywords](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig11.png)
-> **Figure 11: A word cloud of the most frequent keywords in user prompts from voted battles.**
+![Frequent Keywords](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig10.png)
+> **Figure 10: A word cloud of the most frequent keywords in user prompts from voted battles.**
 
 -----
 
