@@ -85,7 +85,7 @@ Below are the first official leaderboards from our initial data release, based o
 ### 🎹 Instrumental Models
 
 | Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
-|:----:|:---|:---:|:---:|:---:|:---:|:---|:---|:---|:---:|:---|
+|:----|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 | 1 | riffusion-fuzz-1-1 | 1250.8 | +52.0 / -45.5 | 252 | 6.01 | Riffusion | Closed | Commercial | True | Proprietary |
 | 2 | magenta-rt-large | 1113.6 | +56.5 / -57.2 | 276 | 1.01 | Google DeepMind | Apache 2.0 | Unspecified | False | Open weights |
 | 3 | musicgen-small | 928.5 | +40.4 / -46.7 | 278 | 0.86 | Meta | CC-BY-NC 4.0 | Stock | False | Open weights |
@@ -95,7 +95,7 @@ Below are the first official leaderboards from our initial data release, based o
 ### 🎤 Vocal Models
 
 | Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
-|:----:|:---|:---:|:---:|:---:|:---:|:---|:---|:---|:---:|:---|
+|:----|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 | 1 | riffusion-fuzz-1-0 | 1172.5 | +99.1 / -62.7 | 144 | 5.6 | Riffusion | Closed | Commercial | True | Proprietary |
 | 2 | riffusion-fuzz-1-1 | 1087.3 | +40.8 / -47.2 | 218 | 5.25 | Riffusion | Closed | Commercial | True | Proprietary |
 | 3 | preview-ocelot | 1045.7 | +75.9 / -82.9 | 90 | 5.42 | Hidden | Closed | Unspecified | True | Proprietary |
