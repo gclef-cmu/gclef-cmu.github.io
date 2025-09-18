@@ -225,7 +225,7 @@ The table below shows the distribution of votes submitted per user based on 1051
 | **11-20**       | 10              |
 | **21-50**       | 4               |
 
-![User Engagement - Stay Duration](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig19.png)
+![User Engagement - Stay Duration](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig9.png)
 > **Figure 9: Correlation between User Engagement and Platform Stay Duration.** Each dot represents a unique user with more than one vote. The x-axis (log scale) shows the total number of votes submitted, while the y-axis shows the time in hours between their first and last vote. The trend suggests that users who cast more votes tend to do so over a longer period of time.
 
 ### 6. How descriptive are user prompts?
