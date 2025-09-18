@@ -113,19 +113,19 @@ We currently offer separate leaderboards for instrumental and vocal models, allo
 
 <script>
   (function() {
-    // GitHub에 있는 TSV 파일의 Raw URL
+    console.log("Leaderboard script started.");
+
     const instrumentalUrl = 'https://raw.githubusercontent.com/yonghyunk1m/music-arena/main/leaderboard/outputs/leaderboards/instrumental_leaderboard_20250728_to_20250831.tsv';
     const vocalUrl = 'https://raw.githubusercontent.com/yonghyunk1m/music-arena/main/leaderboard/outputs/leaderboards/vocal_leaderboard_20250728_to_20250831.tsv';
 
-    /**
-     * TSV 텍스트 데이터를 HTML 테이블 문자열로 변환하는 함수
-     */
-    function tsvToHtmlTable(tsv) {
-      const rows = tsv.trim().split('\n').map(row => row.split('\t'));
+    function tsvToHtmlTable(tsv, sourceUrl) {
+      // Use a regular expression to split lines, handling both \n and \r\n
+      const rows = tsv.trim().split(/\r?\n/).map(row => row.split('\t'));
+      console.log(`Parsed ${rows.length} rows from ${sourceUrl}`);
+
       if (rows.length < 2) return '<p>No data available.</p>';
       
       let html = '<div class="leaderboard-table-wrapper"><table>';
-      
       const headers = rows.shift();
       html += '<thead><tr>';
       headers.forEach(header => {
@@ -136,40 +136,49 @@ We currently offer separate leaderboards for instrumental and vocal models, allo
       html += '<tbody>';
       rows.forEach(row => {
         html += '<tr>';
-        row.forEach(cell => {
-          html += `<td>${cell}</td>`;
-        });
+        // Ensure row has the same number of cells as headers
+        for (let i = 0; i < headers.length; i++) {
+          html += `<td>${row[i] || ''}</td>`;
+        }
         html += '</tr>';
       });
       html += '</tbody></table></div>';
       return html;
     }
 
-    /**
-     * URL에서 데이터를 가져와 지정된 ID를 가진 요소에 테이블을 표시하는 함수
-     */
     async function displayLeaderboard(url, containerId) {
       const container = document.getElementById(containerId);
       if (!container) {
           console.error(`Container with ID "${containerId}" not found.`);
           return;
       }
+      console.log(`Fetching data for ${containerId} from ${url}`);
       try {
-        const response = await fetch(url + '?t=' + new Date().getTime()); // 캐시 방지
+        const response = await fetch(url + '?cache_bust=' + new Date().getTime());
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const tsvData = await response.text();
-        container.innerHTML = tsvToHtmlTable(tsvData);
+        console.log(`Successfully fetched data for ${containerId}.`);
+        container.innerHTML = tsvToHtmlTable(tsvData, url);
+        console.log(`Rendered table for ${containerId}.`);
       } catch (error) {
         container.innerHTML = '<p>Error: Could not load leaderboard data.</p>';
         console.error(`Failed to load data for ${containerId}:`, error);
       }
     }
 
-    // 함수를 바로 호출하여 실행
-    displayLeaderboard(instrumentalUrl, 'instrumental-leaderboard-container');
-    displayLeaderboard(vocalUrl, 'vocal-leaderboard-container');
+    // Ensure the script runs after the DOM is likely settled
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            displayLeaderboard(instrumentalUrl, 'instrumental-leaderboard-container');
+            displayLeaderboard(vocalUrl, 'vocal-leaderboard-container');
+        });
+    } else {
+        // DOM is already ready
+        displayLeaderboard(instrumentalUrl, 'instrumental-leaderboard-container');
+        displayLeaderboard(vocalUrl, 'vocal-leaderboard-container');
+    }
   })();
 </script>
 
