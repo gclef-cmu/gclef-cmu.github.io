@@ -1,6 +1,7 @@
 # Music Arena: Ranking AI Music Models with Your Votes
 *September 18, 2025*
-**Contributors:** [Yonghyun Kim](https://yonghyunk1m.com), **[Nathan Pruyne]()**, **[Chris Donahue](https://chrisdonahue.com/)**. For the full list of Music Arena authors and contributors, see our [research paper](https://arxiv.org/abs/2507.20900).
+**Contributors:** [Yonghyun Kim](https://yonghyunk1m.com), [Nathan Pruyne](), [Chris Donahue](https://chrisdonahue.com/). 
+For the full list of Music Arena authors and contributors, see our [research paper](https://arxiv.org/abs/2507.20900).
 
 [[Music Arena]](https://music-arena.org)  [[Paper]](https://arxiv.org/abs/2507.20900) [[Code]](https://github.com/gclef-cmu/music-arena) [[Dataset]](https://drive.google.com/drive/folders/1Dkd3PSBf4u2Cw48fZj-B8yvulan5LyPl)
 
@@ -78,109 +79,23 @@ As of **September 18, 2025**, the Music Arena leaderboard is live! It  ranks TTM
 
 We currently offer separate leaderboards for instrumental and vocal models, allowing for fair comparison within specific music generation categories. This live ranking serves as a crucial resource for researchers, developers, and music enthusiasts to track the progress of TTM technology.
 
-<h3>🎹 Instrumental Models</h3>
-<div id="instrumental-leaderboard-container">
-  <p>Loading Instrumental Leaderboard...</p>
-</div>
+### 🎹 Instrumental Models
+| Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
+|:----:|:---|:---:|:---:|:---:|:---:|:---|:---|:---|:---:|:---|
+| 1 | riffusion-fuzz-1-1 | 1250.8 | +52.0 / -45.5 | 252 | 6.01 | Riffusion | Closed | Commercial | True | Proprietary |
+| 2 | magenta-rt-large | 1113.6 | +56.5 / -57.2 | 276 | 1.01 | Google DeepMind | Apache 2.0 | Unspecified | False | Open weights |
+| 3 | musicgen-small | 928.5 | +40.4 / -46.7 | 278 | 0.86 | Meta | CC-BY-NC 4.0 | Stock | False | Open weights |
+| 4 | sao | 924.7 | +45.7 / -41.5 | 286 | 2.63 | Stability AI | STAI Community | Open | False | Open weights |
+| 5 | sao-small | 782.4 | +50.9 / -62.2 | 292 | 12.79 | Stability AI | STAI Community | Open | False | Open weights |
 
-<h3>🎤 Vocal Models</h3>
-<div id="vocal-leaderboard-container">
-  <p>Loading Vocal Leaderboard...</p>
-</div>
-
-<style>
-  .leaderboard-table-wrapper table {
-    width: 100%;
-    border-collapse: collapse;
-    display: block;
-    overflow-x: auto;
-    margin-bottom: 1em;
-  }
-  .leaderboard-table-wrapper th, .leaderboard-table-wrapper td {
-    padding: 8px 12px;
-    border: 1px solid #dfe2e5;
-    text-align: left;
-    white-space: nowrap;
-  }
-  .leaderboard-table-wrapper th {
-    background-color: #f6f8fa;
-    font-weight: 600;
-  }
-  .leaderboard-table-wrapper tr:nth-child(even) {
-    background-color: #f6f8fa;
-  }
-</style>
-
-<script>
-  (function() {
-    console.log("Leaderboard script started.");
-
-    const instrumentalUrl = 'https://raw.githubusercontent.com/yonghyunk1m/music-arena/main/leaderboard/outputs/leaderboards/instrumental_leaderboard_20250728_to_20250831.tsv';
-    const vocalUrl = 'https://raw.githubusercontent.com/yonghyunk1m/music-arena/main/leaderboard/outputs/leaderboards/vocal_leaderboard_20250728_to_20250831.tsv';
-
-    function tsvToHtmlTable(tsv, sourceUrl) {
-      // Use a regular expression to split lines, handling both \n and \r\n
-      const rows = tsv.trim().split(/\r?\n/).map(row => row.split('\t'));
-      console.log(`Parsed ${rows.length} rows from ${sourceUrl}`);
-
-      if (rows.length < 2) return '<p>No data available.</p>';
-      
-      let html = '<div class="leaderboard-table-wrapper"><table>';
-      const headers = rows.shift();
-      html += '<thead><tr>';
-      headers.forEach(header => {
-        html += `<th>${header.replace(/_/g, ' ')}</th>`;
-      });
-      html += '</tr></thead>';
-      
-      html += '<tbody>';
-      rows.forEach(row => {
-        html += '<tr>';
-        // Ensure row has the same number of cells as headers
-        for (let i = 0; i < headers.length; i++) {
-          html += `<td>${row[i] || ''}</td>`;
-        }
-        html += '</tr>';
-      });
-      html += '</tbody></table></div>';
-      return html;
-    }
-
-    async function displayLeaderboard(url, containerId) {
-      const container = document.getElementById(containerId);
-      if (!container) {
-          console.error(`Container with ID "${containerId}" not found.`);
-          return;
-      }
-      console.log(`Fetching data for ${containerId} from ${url}`);
-      try {
-        const response = await fetch(url + '?cache_bust=' + new Date().getTime());
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const tsvData = await response.text();
-        console.log(`Successfully fetched data for ${containerId}.`);
-        container.innerHTML = tsvToHtmlTable(tsvData, url);
-        console.log(`Rendered table for ${containerId}.`);
-      } catch (error) {
-        container.innerHTML = '<p>Error: Could not load leaderboard data.</p>';
-        console.error(`Failed to load data for ${containerId}:`, error);
-      }
-    }
-
-    // Ensure the script runs after the DOM is likely settled
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            displayLeaderboard(instrumentalUrl, 'instrumental-leaderboard-container');
-            displayLeaderboard(vocalUrl, 'vocal-leaderboard-container');
-        });
-    } else {
-        // DOM is already ready
-        displayLeaderboard(instrumentalUrl, 'instrumental-leaderboard-container');
-        displayLeaderboard(vocalUrl, 'vocal-leaderboard-container');
-    }
-  })();
-</script>
+### 🎤 Vocal Models
+| Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
+|:----:|:---|:---:|:---:|:---:|:---:|:---|:---|:---|:---:|:---|
+| 1 | riffusion-fuzz-1-0 | 1172.5 | +99.1 / -62.7 | 144 | 5.6 | Riffusion | Closed | Commercial | True | Proprietary |
+| 2 | riffusion-fuzz-1-1 | 1087.3 | +40.8 / -47.2 | 218 | 5.25 | Riffusion | Closed | Commercial | True | Proprietary |
+| 3 | preview-ocelot | 1045.7 | +75.9 / -82.9 | 90 | 5.42 | Hidden | Closed | Unspecified | True | Proprietary |
+| 4 | preview-jerboa | 1034.4 | +92.6 / -80.8 | 88 | 5.61 | Hidden | Closed | Unspecified | True | Proprietary |
+| 5 | acestep | 660.1 | +75.5 / -121.3 | 178 | 2.89 | ACE Studio | Apache 2.0 | Unspecified | True | Open weights |
 
 ![Leaderbaord](https://raw.githubusercontent.com/yonghyunk1m/gclef-cmu.github.io/main/blog/posts/figures/250918_MusicArena_fig3.png)
 > **Figure 3: A screenshot of the Music Arena public leaderboard.** It displays current model rankings based on user votes, along with metrics like Arena Score, vote count, and generation speed (RTF). A "Quality vs. Speed Tradeoff" chart helps visualize model performance.
