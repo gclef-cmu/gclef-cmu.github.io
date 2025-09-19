@@ -294,7 +294,9 @@ We find that a majority of feedback (exactly 2 out of every 3) is **negative**, 
 | **Miscallaneous Feedback**  |      24 |           29.2 |
 | **Generation Quality** |      61 |           42.6 |
 
-Finally, we also group feedback by model and find that the overall rate of positive feedback correlates with Arena score. However, grouping these model feedbacks by category also yields some interesting discoveries, for instance, all feedback relating to prompt adherence for the Magenta RealTime model is negative, while all feedback relating to generation quality is positive, indicating that this system is good at creating high-quality generations, but fails to meet the prompting expectations of users. Prompt adherence generally does increase with higher win rate models, while generation quality feedback increases significantly for models with a win rate of over 50%.
+Finally, we also group feedback by model and find that the overall rate of positive feedback correlates with a model's win rate (Spearman's rho = 0.895, p = 0.001). Both prompt adherence (rho = 0.586, p = 0.097) and generation quality ( rho = 0.726, p = 0.027) also increase with higher win rate models, but generation quality also has a noticeable increase in positive feedback percentage once a model's win rate exceeds 50%. 
+
+Grouping these model feedbacks by category also yields some interesting discoveries, for instance, all feedback relating to prompt adherence for the Magenta RealTime model is negative, while all feedback relating to generation quality is positive, indicating that this system is good at creating high-quality generations, but fails to meet the prompting expectations of users. 
 
 ![Positive feedback rates by model](figures/250918_MusicArena_fig11.png)
 > **Figure 11: Plots of win rate vs positive feedback percentage for all models, also separated by different types of feedback**
