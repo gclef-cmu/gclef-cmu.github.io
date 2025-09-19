@@ -1,9 +1,10 @@
 # Music Arena: Ranking AI Music Models with Your Votes
-*September 18, 2025*
-**Blog post authors:** [Yonghyun Kim](https://yonghyunk1m.com), [Nathan Pruyne](https://nathanpruyne.com/), [Chris Donahue](https://chrisdonahue.com/). 
+
+_September 18, 2025_
+**Blog post authors:** [Yonghyun Kim](https://yonghyunk1m.com), [Nathan Pruyne](https://nathanpruyne.com/), [Chris Donahue](https://chrisdonahue.com/).
 For the full list of Music Arena authors and contributors, see our [research paper](https://arxiv.org/abs/2507.20900).
 
-[[Music Arena]](https://music-arena.org)  [[Paper]](https://arxiv.org/abs/2507.20900) [[Code]](https://github.com/gclef-cmu/music-arena) [[Dataset]](https://drive.google.com/drive/folders/1Dkd3PSBf4u2Cw48fZj-B8yvulan5LyPl)
+[[Music Arena]](https://music-arena.org) [[Paper]](https://arxiv.org/abs/2507.20900) [[Code]](https://github.com/gclef-cmu/music-arena) [[Dataset]](https://drive.google.com/drive/folders/1Dkd3PSBf4u2Cw48fZj-B8yvulan5LyPl)
 
 ## Introduction
 
@@ -22,22 +23,23 @@ In this blog post, we'll cover:
 5. **Initial Data Insights.** Our most surprising findings about user listening behavior.
 6. **What’s Next?** Our plans for the platform and how you can contribute.
 
------
+---
 
 ## Why Music Arena?: The Challenge of Evaluating Music
 
 The quality of music is inherently subjective. While several automatic evaluation metrics have been proposed, they often fail to capture essential qualities like creativity, emotional impact, and overall musicality. Traditional human listening studies are the gold standard, but even listening studies suffer from key issues:
 
-  * **Inconsistent:** Study protocols, listener pools, and comparison sets vary between papers, making it difficult to compare results.
-  * **Unscalable:** Running these studies is expensive and time-consuming.
-  * **Unrealistic:** Evaluations via paid annotators don't reflect how people organically interact with and use generative music tools to accomplish their own creative goals.
+- **Inconsistent:** Study protocols, listener pools, and comparison sets vary between papers, making it difficult to compare results.
+- **Unscalable:** Running these studies is expensive and time-consuming.
+- **Unrealistic:** Evaluations via paid annotators don't reflect how people organically interact with and use generative music tools to accomplish their own creative goals.
 
 Music Arena is designed to overcome these challenges by creating a centralized, standardized, and scalable evaluation platform that is open to everyone.
 
-![Data Lifecycle](figures/250918_MusicArena_fig1.png)
+![Data Lifecycle](fig1.png)
+
 > **Figure 1: Music Arena data lifecycle.** The platform consists of a Frontend for user interaction, a Backend that orchestrates generation from various Model Endpoints, and a Database to store results.
 
------
+---
 
 ## Key Features Tailored for Music
 
@@ -47,65 +49,66 @@ Music presents unique challenges compared to other domains like text or images. 
 
 TTM models are a diverse group. Some create instrumental music, while others can generate vocals with lyrics. To handle this, our intelligent **Backend** uses an LLM (GPT-4o) to:
 
-  * **Moderate Prompts:** Filter out overtly inappropriate or harmful content and references to copyrighted material and artists.
-  * **Analyze Intent:** Understand if a user wants vocals or an instrumental track.
-  * **Route & Adapt:** Select appropriate models for the prompt and even generate lyrics for models that require them, creating a seamless experience from a single text box.
+- **Moderate Prompts:** Filter out overtly inappropriate or harmful content and references to copyrighted material and artists.
+- **Analyze Intent:** Understand if a user wants vocals or an instrumental track.
+- **Route & Adapt:** Select appropriate models for the prompt and even generate lyrics for models that require them, creating a seamless experience from a single text box.
 
 ### 2. Fine-grained Preference Collection
 
-Music is consumed over time. A simple *"A is better than B"* vote doesn't tell the whole story. Thus, Music Arena collects richer data by:
+Music is consumed over time. A simple _"A is better than B"_ vote doesn't tell the whole story. Thus, Music Arena collects richer data by:
 
-  * **Logging Listening Data:** We track how long users listen to each track before making a decision. To ensure meaningful engagement, users must listen for a minimum of 4 seconds before the voting buttons are enabled.
-  * **Collecting Natural Language Feedback:** After voting, users have the option to provide written feedback on what they liked or disliked about each track.
+- **Logging Listening Data:** We track how long users listen to each track before making a decision. To ensure meaningful engagement, users must listen for a minimum of 4 seconds before the voting buttons are enabled.
+- **Collecting Natural Language Feedback:** After voting, users have the option to provide written feedback on what they liked or disliked about each track.
 
-This detailed data provides deeper insights into *why* users prefer one piece of music over another.
+This detailed data provides deeper insights into _why_ users prefer one piece of music over another.
 
-![Music Arena UI](figures/250918_MusicArena_fig2.png)
+![Music Arena UI](fig2.png)
+
 > **Figure 2: An example of the Music Arena user interface.** After voting, users can see model information and generation stats. They can download the preferred music and optionally submit their reason of preference and general feedback on the platform.
 
------
+---
 
 ## Our Commitment to the Community
 
-  * **Regular Data Releases:** We are committed to releasing the [anonymized preference data](https://drive.google.com/drive/folders/1Dkd3PSBf4u2Cw48fZj-B8yvulan5LyPl) at regular monthly intervals, providing a renewable resource for the research community.
-  * **Open and Auditable Platform:** Our [platform](https://music-arena.org/) is fully open-source. Anyone can inspect our [code](https://github.com/gclef-cmu/music-arena), from the frontend UI to the backend scoring logic, ensuring transparency and building trust. We also aim for comprehensive, rolling data releases, to further increase auditability.
-  * **User Privacy:** We do not store personally identifiable information. We use a salted hashing protocol to create anonymous user identifiers, allowing for research on user behavior without compromising privacy.
+- **Regular Data Releases:** We are committed to releasing the [anonymized preference data](https://drive.google.com/drive/folders/1Dkd3PSBf4u2Cw48fZj-B8yvulan5LyPl) at regular monthly intervals, providing a renewable resource for the research community.
+- **Open and Auditable Platform:** Our [platform](https://music-arena.org/) is fully open-source. Anyone can inspect our [code](https://github.com/gclef-cmu/music-arena), from the frontend UI to the backend scoring logic, ensuring transparency and building trust. We also aim for comprehensive, rolling data releases, to further increase auditability.
+- **User Privacy:** We do not store personally identifiable information. We use a salted hashing protocol to create anonymous user identifiers, allowing for research on user behavior without compromising privacy.
 
------
+---
 
 ## The Public Leaderboard
 
-As of **September 18, 2025**, the Music Arena leaderboard is live! It  ranks TTM models based on ongoing user votes, and the rankings **are updated on a regular basis with each new data release**. The leaderboard provides transparent insights into model performance, including their Arena Score, confidence intervals, total votes, and generation speed (Real-Time Factor, RTF).
+As of **September 18, 2025**, the Music Arena leaderboard is live! It ranks TTM models based on ongoing user votes, and the rankings **are updated on a regular basis with each new data release**. The leaderboard provides transparent insights into model performance, including their Arena Score, confidence intervals, total votes, and generation speed (Real-Time Factor, RTF).
 
 We currently offer separate leaderboards for instrumental and vocal models, allowing for fair comparison within specific music generation categories. This live ranking serves as a crucial resource for researchers, developers, and music enthusiasts to track the progress of TTM technology.
 
 Below are the first official leaderboards from our initial data release, based on votes collected from **July 28 to August 31, 2025**.
 
-
 ### 🎹 Instrumental Models
 
-| Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
-|:----|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
-| 1 | riffusion-fuzz-1-1 | 1250.8 | +52.0 / -45.5 | 252 | 6.01 | Riffusion | Closed | Unspecified | True | Proprietary |
-| 2 | magenta-rt-large | 1113.6 | +56.5 / -57.2 | 276 | 1.01 | Google DeepMind | Apache 2.0 | Unspecified | False | Open weights |
-| 3 | musicgen-small | 928.5 | +40.4 / -46.7 | 278 | 0.86 | Meta | CC-BY-NC 4.0 | Stock | False | Open weights |
-| 4 | sao | 924.7 | +45.7 / -41.5 | 286 | 2.63 | Stability AI | STAI Community | Open | False | Open weights |
-| 5 | sao-small | 782.4 | +50.9 / -62.2 | 292 | 12.79 | Stability AI | STAI Community | Open | False | Open weights |
+| Rank | Model              | Arena Score | 95% CI        | # Votes | Generation Speed (RTF) | Organization    | License        | Training Data | Supports Lyrics | Access       |
+| :--- | :----------------- | :---------- | :------------ | :------ | :--------------------- | :-------------- | :------------- | :------------ | :-------------- | :----------- |
+| 1    | riffusion-fuzz-1-1 | 1250.8      | +52.0 / -45.5 | 252     | 6.01                   | Riffusion       | Closed         | Unspecified   | True            | Proprietary  |
+| 2    | magenta-rt-large   | 1113.6      | +56.5 / -57.2 | 276     | 1.01                   | Google DeepMind | Apache 2.0     | Unspecified   | False           | Open weights |
+| 3    | musicgen-small     | 928.5       | +40.4 / -46.7 | 278     | 0.86                   | Meta            | CC-BY-NC 4.0   | Stock         | False           | Open weights |
+| 4    | sao                | 924.7       | +45.7 / -41.5 | 286     | 2.63                   | Stability AI    | STAI Community | Open          | False           | Open weights |
+| 5    | sao-small          | 782.4       | +50.9 / -62.2 | 292     | 12.79                  | Stability AI    | STAI Community | Open          | False           | Open weights |
 
 ### 🎤 Vocal Models
 
-| Rank | Model | Arena Score | 95% CI | # Votes | Generation Speed (RTF) | Organization | License | Training Data | Supports Lyrics | Access |
-|:----|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
-| 1 | riffusion-fuzz-1-0 | 1172.5 | +99.1 / -62.7 | 144 | 5.6 | Riffusion | Closed | Unspecified | True | Proprietary |
-| 2 | riffusion-fuzz-1-1 | 1087.3 | +40.8 / -47.2 | 218 | 5.25 | Riffusion | Closed | Unspecified | True | Proprietary |
-| 3 | preview-ocelot | 1045.7 | +75.9 / -82.9 | 90 | 5.42 | Hidden | Closed | Unspecified | True | Proprietary |
-| 4 | preview-jerboa | 1034.4 | +92.6 / -80.8 | 88 | 5.61 | Hidden | Closed | Unspecified | True | Proprietary |
-| 5 | acestep | 660.1 | +75.5 / -121.3 | 178 | 2.89 | ACE Studio | Apache 2.0 | Unspecified | True | Open weights |
+| Rank | Model              | Arena Score | 95% CI         | # Votes | Generation Speed (RTF) | Organization | License    | Training Data | Supports Lyrics | Access       |
+| :--- | :----------------- | :---------- | :------------- | :------ | :--------------------- | :----------- | :--------- | :------------ | :-------------- | :----------- |
+| 1    | riffusion-fuzz-1-0 | 1172.5      | +99.1 / -62.7  | 144     | 5.6                    | Riffusion    | Closed     | Unspecified   | True            | Proprietary  |
+| 2    | riffusion-fuzz-1-1 | 1087.3      | +40.8 / -47.2  | 218     | 5.25                   | Riffusion    | Closed     | Unspecified   | True            | Proprietary  |
+| 3    | preview-ocelot     | 1045.7      | +75.9 / -82.9  | 90      | 5.42                   | Hidden       | Closed     | Unspecified   | True            | Proprietary  |
+| 4    | preview-jerboa     | 1034.4      | +92.6 / -80.8  | 88      | 5.61                   | Hidden       | Closed     | Unspecified   | True            | Proprietary  |
+| 5    | acestep            | 660.1       | +75.5 / -121.3 | 178     | 2.89                   | ACE Studio   | Apache 2.0 | Unspecified   | True            | Open weights |
 
-![Leaderboard Plot](figures/250918_MusicArena_fig3.png)
+![Leaderboard Plot](fig3.png)
+
 > **Figure 3: Music Arena Leaderboard Plots (July 28 - Aug 31, 2025).** The plots for Instrumental (left) and Vocal (right) models are shown side-by-side. Each model is plotted by its Arena Score and Generation Speed (RTF), with colors indicating training data and shapes indicating access type (Open weights vs. Proprietary).
 
------
+---
 
 ## Initial Data Insights
 
@@ -115,11 +118,11 @@ From our initial data collection period [(July 28 - Aug 31, 2025)](https://drive
 
 About **27%** of user battles start with a **"🎲 Random Prompt"**, retrieving a [prebaked prompt](https://github.com/gclef-cmu/music-arena/blob/e87b37d8b758b7c9eab239abf02154494488d27e/components/gateway/prebaked.json), while the majority of users write their own creative prompts from scratch. We find that users who write their own prompts are more likely to complete the vote (77% conversion rate) compared to those who use a prebaked prompt (65% conversion rate).
 
-| Prompt Type           | Total Battles | Voted Battles | Vote Ratio [%] |
-| :-------------------- | :------------ | :------------ | :------------- |
-| **User-Written**      | 1040          | 804           | 77.31          |
-| **🎲 Random Prompt**  | 380           | 247           | 65.00          |
-| **Total User Battles**| 1420          | 1051          | 74.01          |
+| Prompt Type            | Total Battles | Voted Battles | Vote Ratio [%] |
+| :--------------------- | :------------ | :------------ | :------------- |
+| **User-Written**       | 1040          | 804           | 77.31          |
+| **🎲 Random Prompt**   | 380           | 247           | 65.00          |
+| **Total User Battles** | 1420          | 1051          | 74.01          |
 
 **Note**: Subsequent analyses in this report focus on the dataset of 1,051 voted battles, unless otherwise specified.
 
@@ -127,14 +130,15 @@ About **27%** of user battles start with a **"🎲 Random Prompt"**, retrieving 
 
 The next thing we noticed was a stark difference in listening times: users listened to the left track (Track A) far longer than the right track (Track B). Raw data showed high maximum listening times, suggesting some users leave tabs open. To focus on typical behavior, we removed 196 outliers using the Interquartile Range (IQR) method. The statistics for the remaining data, shown below, paint a clearer picture.
 
-| Metric            | Track A [s] | Track B [s] |
-| :---------------- | :---------- | :---------- |
-| **Average**       | 25.98       | 11.57       |
-| **Median**        | 20.66       | 7.08        |
-| **Min**           | 4.03        | 4.02        |
-| **Max (Post-IQR)**| 88.15       | 46.76       |
+| Metric             | Track A [s] | Track B [s] |
+| :----------------- | :---------- | :---------- |
+| **Average**        | 25.98       | 11.57       |
+| **Median**         | 20.66       | 7.08        |
+| **Min**            | 4.03        | 4.02        |
+| **Max (Post-IQR)** | 88.15       | 46.76       |
 
-![Listening Data](figures/250918_MusicArena_fig4.png)
+![Listening Data](fig4.png)
+
 > **Figure 4: Listening time distributions for Track A (left) and Track B (right).** After removing outliers, the histograms show that users tend to listen to Track A longer than B (median 20.7s vs. 7.1s) before making a preference decision.
 
 Why is Track A listened to so much longer? To investigate, we analyzed the very first "play" action users take in a battle. The analysis of **1,051** valid battles revealed an overwhelming (but not unexpected) bias towards users listening to Track A (the left track) in >95% of battles:
@@ -148,16 +152,17 @@ This led us to a new hypothesis: **users will listen longer to whichever track t
 
 We re-categorized all listening data into "First-Played Track" and "Second-Played Track" and ran the analysis again. After removing IQR outliers (203 battles), the findings corroborate this hypothesis: the discrepancy between play counts is even sharper when we analyze this.
 
-| Metric            | First-Played [s] | Second-Played [s] |
-| :---------------- | :--------------- | :---------------- |
-| **Average**       | 26.39            | 10.80             |
-| **Median**        | 21.01            | 6.62              |
-| **Min**           | 4.03             | 4.02              |
-| **Max (Post-IQR)**| 88.15            | 42.60             |
+| Metric             | First-Played [s] | Second-Played [s] |
+| :----------------- | :--------------- | :---------------- |
+| **Average**        | 26.39            | 10.80             |
+| **Median**         | 21.01            | 6.62              |
+| **Min**            | 4.03             | 4.02              |
+| **Max (Post-IQR)** | 88.15            | 42.60             |
 
 The data clearly shows that users dedicate significantly more time to the track they listen to first—more than double on average (26.4s vs. 10.8s).
 
-![Listening Data 2](figures/250918_MusicArena_fig5.png)
+![Listening Data 2](fig5.png)
+
 > **Figure 5: Listening time distributions for the First-Played and Second-Played tracks.** After removing IQR outliers, the data clearly shows that the first track a user engages with receives substantially more listening time.
 
 In pairwise music preference decisions, we observe that users often listen extensively to the first track, but only briefly to the second before making a decision. A plausible explanation for this is that the **first track** acts as a **reference point**. Evaluating this initial track appears to require an open-ended assessment of its quality, a task that can demand significant time and mental effort. Once this reference point is established, the evaluation of the **second track** seems to simplify to a more direct, relative comparison: "Is this track better or worse than the one I just heard?" This comparative judgment likely requires **less cognitive effort** and therefore **less listening time**, which may account for the discrepancy observed in our data.
@@ -166,11 +171,11 @@ In pairwise music preference decisions, we observe that users often listen exten
 
 A core question in our analysis is what listening time represents as a behavioral metric. To investigate whether extended listening time might correlate with a positive preference, we analyzed the win rate of the first-played track, which consistently receives more listening time.
 
-| Outcome for First-Played Track       | Count | Probability [%] |
-| :----------------------------------- | :---- | :-------------- |
-| **Win**                              | 356   | 33.87           |
-| **Loss**                             | 437   | 41.58           |
-| **Tie / Both Bad**                   | 258   | 24.55           |
+| Outcome for First-Played Track | Count | Probability [%] |
+| :----------------------------- | :---- | :-------------- |
+| **Win**                        | 356   | 33.87           |
+| **Loss**                       | 437   | 41.58           |
+| **Tie / Both Bad**             | 258   | 24.55           |
 
 The data indicates a negative relationship between being the longer-played track and the final outcome. When excluding ties, the first-played track wins 44.9% of the time. This result suggests that the time a user spends on a track should be interpreted as a measure of **engagement**, which is distinct from their final **preference**.
 
@@ -178,21 +183,24 @@ This distinction is supported by other observations. For instance, users spend n
 
 While creating music that holds user attention is an important goal, our data suggests that **listening time in a battle context is a complex signal, not just a measure of positive interest**.
 
-![Model Listening Time](figures/250918_MusicArena_fig6.png)
+![Model Listening Time](fig6.png)
+
 > **Figure 6: Listening Time Distribution by Model Category.** The distributions show that users on average spend more time listening to models that generate vocal tracks compared to those that generate instrumental tracks.
 
 ### 4. Do Closer Battles Lead to Deeper Engagement?
 
 To see if users work harder on more difficult comparisons, we analyzed whether engagement increases when two models are closely matched. We measured two key engagement metrics—**total listening time** and the **number of swaps**—against the "closeness" of a battle, defined by the absolute difference between the models' Arena Scores.
 
-After removing outliers (118 battles) using the IQR method, our analysis of **listening time** reveals a statistically significant, albeit very weak, negative correlation (Spearman's rho = -0.082, p-value = 0.012). This suggests that as the performance gap between two models becomes larger (i.e., one model may be clearly better than the other), users tend to spend slightly *less* time listening before casting their vote.
+After removing outliers (118 battles) using the IQR method, our analysis of **listening time** reveals a statistically significant, albeit very weak, negative correlation (Spearman's rho = -0.082, p-value = 0.012). This suggests that as the performance gap between two models becomes larger (i.e., one model may be clearly better than the other), users tend to spend slightly _less_ time listening before casting their vote.
 
-![Correlation](figures/250918_MusicArena_fig7.png)
+![Correlation](fig7.png)
+
 > **Figure 7: The correlation between Arena Score difference and total listening time.** Each dot represents a single battle after outliers were removed using the IQR method. While there is a high variance in listening times, the regression line (red dashes) shows a slight negative trend.
 
 We observed a similar trend with the **number of swaps**. The correlation is also slightly negative (Spearman's rho = -0.097, p-value = 0.002), indicating that users switch back and forth slightly more often when models are closely matched, demanding more effort to make a decision.
 
-![Correlation](figures/250918_MusicArena_fig8.png)
+![Correlation](fig8.png)
+
 > **Figure 8: The correlation between Arena Score difference and the number of swaps.** Each dot represents a single battle. While there is a high variance in number of swaps, the regression line (blue dashes) shows a slight negative trend.
 
 This suggests users adapt their listening strategy for harder decisions. While a single swap is the norm, closer battles prompt a more careful, back-and-forth comparison. The table below shows the general distribution of swap counts across all voted-on battles:
@@ -212,7 +220,6 @@ Our analysis shows a long-tail distribution of user engagement. A large number o
 
 The table below shows the distribution of votes submitted per user based on 1051 valid votes from 373 unique users. For example, **193 users** have submitted exactly **one vote**, while a small number of highly engaged users are responsible for dozens of submissions. The most "power user" has submitted **49 votes**.
 
-
 | Number of Votes | Number of Users |
 | :-------------- | :-------------- |
 | **1**           | 193             |
@@ -226,7 +233,8 @@ The table below shows the distribution of votes submitted per user based on 1051
 
 ### 6. How descriptive are user prompts?
 
-![Prompt Lengths](figures/250918_MusicArena_fig9.png)
+![Prompt Lengths](fig9.png)
+
 > **Figure 9: Distribution of User Prompt Lengths (from Voted Battles).** The histogram shows the distribution after outliers were removed using the IQR method, revealing that the vast majority of user prompts are under 33 words long.
 
 Analyzing the **804** user-written prompts from valid, voted-on battles reveals a clear trend: the vast majority are concise and to the point. The raw data shows a median prompt length of just **7 words**, but the average is skewed higher by a long tail of very descriptive prompts, with a maximum length of 1000 words.
@@ -255,22 +263,23 @@ This confirms that while some users provide detailed instructions, the typical M
 
 ### 7. What kind of music do users create?
 
-By analyzing the **804** user-written prompts from valid, voted battles, we can see what our users are creating. The results show a mix of genres, instruments, and moods. 
+By analyzing the **804** user-written prompts from valid, voted battles, we can see what our users are creating. The results show a mix of genres, instruments, and moods.
 
-| Keyword    | Frequency |
-| :--------- | :-------- |
-| **bass**   | 101       |
-| **pop**    | 98        |
-| **vocals** | 81        |
-| **piano**  | 70        |
-| **rock**   | 69        |
-| **dark**   | 66        |
-| **melodic**| 66        |
-| **chorus** | 65        |
+| Keyword     | Frequency |
+| :---------- | :-------- |
+| **bass**    | 101       |
+| **pop**     | 98        |
+| **vocals**  | 81        |
+| **piano**   | 70        |
+| **rock**    | 69        |
+| **dark**    | 66        |
+| **melodic** | 66        |
+| **chorus**  | 65        |
 
 Requests for specific instruments are very common, with "bass" (101), "vocals" (81), and "piano" (70) appearing frequently. Popular genres include "pop" (98) and "rock" (69). Users also provide detailed creative direction, using moods like "dark" (66) and musical descriptors such as "melodic" (66) and "chorus" (65). This analysis gives us a direct window into the creative intentions of our users.
 
-![Frequent Keywords](figures/250918_MusicArena_fig10.png)
+![Frequent Keywords](fig10.png)
+
 > **Figure 10: A word cloud of the most frequent keywords in user prompts from voted battles.**
 
 ### 8. How do users react to model generations?
@@ -279,37 +288,37 @@ Alongside battle data, we also offer users the opportunity to provide written fe
 
 We received **147 written feedbacks** on model generations, which we further analyze using an LLM (Gemini 2.5 Flash). We ask the LLM to label each feedback with a sentiment, either positive or negative, as well as a category, either Generation Quality, Prompt Adherence, or Musicallaneous (i.e. non-descriptive) Feedback. These categories were first identified by us, then confirmed to be the most salient categorization by the LLM. Examples of each type of feedback are shown below:
 
-
-| Example Feedback            | <span style="color:green">Positive | <span style="color:red">Negative |
-| :---------------- | :--------------- | :---------------- |
-| **Generation Quality**       | <span style="color:green">"good voice quality" | <span style="color:red">"It has sharp sound that is quite ear-piercing" |
-| **Prompt Adherence**        | <span style="color:green">"Good lyrics and followed prompt well" | <span style="color:red">"it had nothing to do with what i asked for" |
-| **Miscallaneous Feedback**           | <span style="color:green">"The lines were pretty fire and the beat was good too" | <span style="color:red">"This isn't even music" |
+| Example Feedback           | <span style="color:green">Positive                                               | <span style="color:red">Negative                                        |
+| :------------------------- | :------------------------------------------------------------------------------- | :---------------------------------------------------------------------- |
+| **Generation Quality**     | <span style="color:green">"good voice quality"                                   | <span style="color:red">"It has sharp sound that is quite ear-piercing" |
+| **Prompt Adherence**       | <span style="color:green">"Good lyrics and followed prompt well"                 | <span style="color:red">"it had nothing to do with what i asked for"    |
+| **Miscallaneous Feedback** | <span style="color:green">"The lines were pretty fire and the beat was good too" | <span style="color:red">"This isn't even music"                         |
 
 We find that a majority of feedback (exactly 2 out of every 3) is **negative**, indicating that users are more likely to give feedback when the models do not behave as they may wish. We also find that users are more likely to provide positive feedback for generation quality (42.6% positive comments), and less likely for prompt adherence (25.8% positive comments).
 
-| Type                   |   Total |   Positive [%] |
-|:-----------------------|--------:|---------------:|
-| **Prompt Adherence**   |      62 |           25.8 |
-| **Miscallaneous Feedback**  |      24 |           29.2 |
-| **Generation Quality** |      61 |           42.6 |
+| Type                       | Total | Positive [%] |
+| :------------------------- | ----: | -----------: |
+| **Prompt Adherence**       |    62 |         25.8 |
+| **Miscallaneous Feedback** |    24 |         29.2 |
+| **Generation Quality**     |    61 |         42.6 |
 
-Finally, we also group feedback by model and find that the overall rate of positive feedback correlates with a model's win rate (Spearman's rho = 0.895, p = 0.001). Both prompt adherence (rho = 0.586, p = 0.097) and generation quality ( rho = 0.726, p = 0.027) also increase with higher win rate models, but generation quality also has a noticeable increase in positive feedback percentage once a model's win rate exceeds 50%. 
+Finally, we also group feedback by model and find that the overall rate of positive feedback correlates with a model's win rate (Spearman's rho = 0.895, p = 0.001). Both prompt adherence (rho = 0.586, p = 0.097) and generation quality ( rho = 0.726, p = 0.027) also increase with higher win rate models, but generation quality also has a noticeable increase in positive feedback percentage once a model's win rate exceeds 50%.
 
-Grouping these model feedbacks by category also yields some interesting discoveries, for instance, all feedback relating to prompt adherence for the Magenta RealTime model is negative, while all feedback relating to generation quality is positive, indicating that this system is good at creating high-quality generations, but fails to meet the prompting expectations of users. 
+Grouping these model feedbacks by category also yields some interesting discoveries, for instance, all feedback relating to prompt adherence for the Magenta RealTime model is negative, while all feedback relating to generation quality is positive, indicating that this system is good at creating high-quality generations, but fails to meet the prompting expectations of users.
 
-![Positive feedback rates by model](figures/250918_MusicArena_fig11.png)
+![Positive feedback rates by model](fig11.png)
+
 > **Figure 11: Plots of win rate vs positive feedback percentage for all models, also separated by different types of feedback**
 
------
+---
 
 ## What’s Next?
 
 The launch of our public leaderboard is just the beginning. We are continuously working to improve Music Arena and deepen our understanding of human preferences for generative music. Here's what you can look forward to:
 
-  * **Deeper Analysis & More Insights:** We are just scratching the surface. We will continue to share more fine-grained analyses on this blog, exploring why users prefer certain models and what musical attributes are most important for high-quality generation.
-  * **New Models:** The world of TTM is evolving rapidly. We will be continuously adding new state-of-the-art models to the Arena to keep the leaderboard fresh and representative of the current landscape.
-  * **Opportunities to Contribute:** Music Arena is a community-driven project. We welcome feedback on our platform, suggestions for new models to include, and collaboration with researchers. Get involved by using the platform and sharing your thoughts\!
+- **Deeper Analysis & More Insights:** We are just scratching the surface. We will continue to share more fine-grained analyses on this blog, exploring why users prefer certain models and what musical attributes are most important for high-quality generation.
+- **New Models:** The world of TTM is evolving rapidly. We will be continuously adding new state-of-the-art models to the Arena to keep the leaderboard fresh and representative of the current landscape.
+- **Opportunities to Contribute:** Music Arena is a community-driven project. We welcome feedback on our platform, suggestions for new models to include, and collaboration with researchers. Get involved by using the platform and sharing your thoughts\!
 
 We hope that Music Arena will bring new clarity to TTM evaluation and provide a foundational resource for building the next generation of music models that are better aligned with human creative values.
 
