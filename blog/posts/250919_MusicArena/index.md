@@ -1,6 +1,6 @@
 # Music Arena: Ranking AI Music Models with Your Votes
 
-_September 18, 2025_
+_September 19, 2025_
 **Blog post authors:** [Yonghyun Kim](https://yonghyunk1m.com), [Nathan Pruyne](https://nathanpruyne.com/), [Chris Donahue](https://chrisdonahue.com/).
 For the full list of Music Arena authors and contributors, see our [research paper](https://arxiv.org/abs/2507.20900).
 
