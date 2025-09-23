@@ -1,4 +1,4 @@
-# How to Add Team Members & Publications
+# Updating Team, Publications, and Supporters
 
 This repo manages team profiles and publications via JSON files + static assets.  
 
@@ -9,7 +9,7 @@ This repo manages team profiles and publications via JSON files + static assets.
    Example: `static/headshots/newstudent.jpeg`
 
 2. **Update JSON** → edit `team/members.json`  
-   Add entry under `faculty` or `students`:
+   Add entry under `faculty`, `students`, or `alumni`:
 
    ```json
    {
@@ -20,7 +20,9 @@ This repo manages team profiles and publications via JSON files + static assets.
      "website": "https://newstudent.com",
      "photo": "newstudent.jpeg"
    }
+   ```
 
+   For alumni, make sure to add a `status` field to indicate their current position.
 
 
 ## 📄 Add a Publication
@@ -46,6 +48,8 @@ This repo manages team profiles and publications via JSON files + static assets.
      "code_link": "https://github.com/example/newpaperdemo"
    }
    ```
+    
+    - `nickname` field is used in the **Recent Highlights** section of `HOME.md`.
 
 3. **Assets (use same `{id}`)**
 
@@ -64,7 +68,26 @@ This repo manages team profiles and publications via JSON files + static assets.
         }
      ```
 
-## Local Debugging Guide
+## 🏢 Add a Supporter
+
+1. **Logo** → place in `static/logos/`  
+   Example: `static/logos/newsupporter.webp`
+
+2. **Update JSON** → edit `supporters.json`  
+   Add entry to the supporters array:
+
+   ```json
+   {
+     "name": "New Supporter",
+     "image": "static/logos/newsupporter.webp",
+     "link": "https://newsupporter.com"
+   }
+   ```
+
+
+<br><br>
+
+# 💻 Local Debugging Guide
 
 ### 1. Install Node.js
 ```bash
@@ -82,7 +105,7 @@ npm install
 ```
 
 ### 3. Start a Local Server
-Use Python’s built-in HTTP server to preview the site.
+Use Python's built-in HTTP server to preview the site.
 Access it via http://localhost:4000 (or whichever port you choose).
 ```bash
 # serves files from the _site/ directory on port 4000
