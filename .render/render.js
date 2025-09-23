@@ -430,6 +430,43 @@ function generateStudentsContent(membersData) {
     return html;
 }
 
+/* Generate alumni content HTML from members data */
+function generateAlumniContent(membersData) {
+    let html = `<div class="alumni-list">\n`;
+    
+    if (membersData.alumni && membersData.alumni.length > 0) {
+        membersData.alumni.forEach(member => {
+            html += `  <div class="alumni-item">\n`;
+            
+            // Format: Name • Type • Status
+            let displayText = '';
+            
+            // Make only the name clickable if there's a website
+            if (member.website) {
+                displayText += `<a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.name}</a>`;
+            } else {
+                displayText += member.name;
+            }
+            
+            if (member.type) {
+                displayText += ` • ${member.type}`;
+            }
+            
+            if (member.status) {
+                displayText += ` • ${member.status}`;
+            }
+            
+            html += `    <span>${displayText}</span>\n`;
+            html += `  </div>\n`;
+        });
+    } else {
+        html += `  <p>No alumni information available.</p>\n`;
+    }
+    
+    html += `</div>\n`;
+    return html;
+}
+
 /* Generate research content HTML from research data */
 async function generateResearchContent(researchData, bibtexData) {
     let html = "";
@@ -591,10 +628,12 @@ function generatePageHtml(templateContent, pageType, data, bibtexData) {
     if (pageType === 'team') {
         const facultyContent = generateFacultyContent(data);
         const studentsContent = generateStudentsContent(data);
+        const alumniContent = generateAlumniContent(data);
         
         return templateContent
             .replace('{{FACULTY_CONTENT}}', facultyContent)
-            .replace('{{STUDENTS_CONTENT}}', studentsContent);
+            .replace('{{STUDENTS_CONTENT}}', studentsContent)
+            .replace('{{ALUMNI_CONTENT}}', alumniContent);
     } else if (pageType === 'research') {
         // This will be handled asynchronously in renderPage
         return templateContent;

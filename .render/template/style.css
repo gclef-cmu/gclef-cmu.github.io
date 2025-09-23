@@ -557,6 +557,31 @@ Team page specific styles
     color: #666;
 }
 
+/* Alumni section styles */
+.alumni-list {
+    margin: 0;
+}
+
+.alumni-item {
+    margin: 2px 0;
+    padding: 4px 0;
+    text-align: left;
+}
+
+.alumni-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.alumni-item a:hover {
+    color: var(--hover-color);
+}
+
+.alumni-item span {
+    color: var(--text-color);
+}
+
 /* Research page specific styles */
 .year-heading {
     font-size: 1.7em;
