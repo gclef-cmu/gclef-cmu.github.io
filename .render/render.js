@@ -898,7 +898,7 @@ async function renderPage(mdPath, ctx) {
 
     // Build footer with correct relative logo sources
     // const cmuOut = path.join(OUTPUT_ROOT, "static", "logos", "cmu.png");
-    const scsOut = path.join(OUTPUT_ROOT, "static", "logos", "cmuscs.webp");
+    const scsOut = path.join(OUTPUT_ROOT, "static", "logos", "cmuscs.svg");
     const csdOut = path.join(OUTPUT_ROOT, "static", "logos", "cmucsd.svg");
     const footerHtml = footerTemplate
         // .replace("{{CMU_LOGO_SRC}}", path.relative(path.dirname(pageOut), cmuOut).split(path.sep).join("/"))
