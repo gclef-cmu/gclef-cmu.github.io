@@ -413,6 +413,21 @@ video {
         margin: 0 0 4px 0;
         /* margin-bottom: 0px; */
     }
+
+
+    .footer-logo {
+        height: 32px;
+        width: auto;
+        display: block;
+        object-fit: contain;
+        max-width: 100%;
+    }
+    
+    /* Ensure SVGs display properly */
+    .footer-logo[src$=".svg"] {
+        height: 32px;
+        width: auto;
+    }
     
     .site-nav .site-title { 
         margin-right: 0; 
@@ -456,6 +471,7 @@ video {
     .home-page main.container {
         padding-top: 0 !important;
     }
+    
 }
 
 /* Print styles */
