@@ -64,3 +64,33 @@ This repo manages team profiles and publications via JSON files + static assets.
         }
      ```
 
+## Local Debugging Guide
+
+### 1. Install Node.js
+```bash
+# macOS
+brew install node
+
+# conda environment
+conda install conda-forge::nodejs
+```
+
+### 2. Install Dependencies
+```bash
+cd your-git-dir
+npm install
+```
+
+### 3. Start a Local Server
+Use Python’s built-in HTTP server to preview the site.
+Access it via http://localhost:4000 (or whichever port you choose).
+```bash
+# serves files from the _site/ directory on port 4000
+python3 -m http.server --directory _site 4000
+```
+
+### 4. Build the Site
+Compile the source files (run this whenever you make code changes):
+```bash
+node .render/render.js
+```
