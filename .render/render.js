@@ -351,6 +351,36 @@ async function loadResearchData() {
     }
 }
 
+/* Load supporters data from JSON file */
+async function loadSupportersData() {
+    const supportersPath = path.join(REPO_ROOT, "supporters.json");
+    try {
+        const raw = await fs.readFile(supportersPath, "utf-8");
+        return JSON.parse(raw);
+    } catch (error) {
+        console.warn(`Warning: Could not load supporters data:`, error.message);
+        return [];
+    }
+}
+
+/* Generate supporters HTML from supporters data */
+function generateSupportersHtml(supportersData) {
+    if (!supportersData || supportersData.length === 0) {
+        return "";
+    }
+    
+    let html = '<div class="supporters-container">\n';
+    
+    supportersData.forEach(supporter => {
+        html += `  <a href="${supporter.link}" target="_blank" rel="noopener noreferrer">\n`;
+        html += `    <img src="${supporter.image}" alt="${supporter.name}">\n`;
+        html += `  </a>\n`;
+    });
+    
+    html += '</div>';
+    return html;
+}
+
 /* Generate faculty content HTML from members data */
 function generateFacultyContent(membersData) {
     let html = "";
@@ -397,6 +427,43 @@ function generateStudentsContent(membersData) {
     
     html += `</div>\n`;
     
+    return html;
+}
+
+/* Generate alumni content HTML from members data */
+function generateAlumniContent(membersData) {
+    let html = `<div class="alumni-list">\n`;
+    
+    if (membersData.alumni && membersData.alumni.length > 0) {
+        membersData.alumni.forEach(member => {
+            html += `  <div class="alumni-item">\n`;
+            
+            // Format: Name • Type • Status
+            let displayText = '';
+            
+            // Make only the name clickable if there's a website
+            if (member.website) {
+                displayText += `<a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.name}</a>`;
+            } else {
+                displayText += member.name;
+            }
+            
+            if (member.type) {
+                displayText += ` • ${member.type}`;
+            }
+            
+            if (member.status) {
+                displayText += ` • ${member.status}`;
+            }
+            
+            html += `    <span>${displayText}</span>\n`;
+            html += `  </div>\n`;
+        });
+    } else {
+        html += `  <p>No alumni information available.</p>\n`;
+    }
+    
+    html += `</div>\n`;
     return html;
 }
 
@@ -561,10 +628,12 @@ function generatePageHtml(templateContent, pageType, data, bibtexData) {
     if (pageType === 'team') {
         const facultyContent = generateFacultyContent(data);
         const studentsContent = generateStudentsContent(data);
+        const alumniContent = generateAlumniContent(data);
         
         return templateContent
             .replace('{{FACULTY_CONTENT}}', facultyContent)
-            .replace('{{STUDENTS_CONTENT}}', studentsContent);
+            .replace('{{STUDENTS_CONTENT}}', studentsContent)
+            .replace('{{ALUMNI_CONTENT}}', alumniContent);
     } else if (pageType === 'research') {
         // This will be handled asynchronously in renderPage
         return templateContent;
@@ -747,7 +816,7 @@ Render a single markdown file to an HTML page:
 - Writes the final HTML to the computed output path
 */
 async function renderPage(mdPath, ctx) {
-    const { template, purify, navItems, stylesheet, config, navTemplate, footerTemplate, membersData, researchData, bibtexData } = ctx;
+    const { template, purify, navItems, stylesheet, config, navTemplate, footerTemplate, membersData, researchData, bibtexData, supportersData } = ctx;
     const homeMdBasename = path.basename(config.home_md);
 
     // Special handling for team and research pages - generate content from JSON data
@@ -778,6 +847,10 @@ async function renderPage(mdPath, ctx) {
         // Generate research highlights and replace placeholder
         const researchHighlights = await generateResearchHighlights(researchData);
         body = body.replace('{{RESEARCH_HIGHLIGHTS}}', researchHighlights);
+        
+        // Generate supporters HTML and replace placeholder
+        const supportersHtml = generateSupportersHtml(supportersData);
+        body = body.replace('{{SUPPORTERS_HTML}}', supportersHtml);
     } else if (mdPath.includes('/research/') && mdPath.endsWith('/index.md')) {
         // Handle individual project pages
         const projectId = path.basename(path.dirname(mdPath));
@@ -958,6 +1031,7 @@ async function buildSite() {
     const membersData = await loadMembersData();
     const researchData = await loadResearchData();
     const bibtexData = await loadBibtexData();
+    const supportersData = await loadSupportersData();
     const purify = DOMPurify(new JSDOM("").window);
 
     // Copy static files
@@ -999,6 +1073,7 @@ async function buildSite() {
             membersData,
             researchData,
             bibtexData,
+            supportersData,
         });
     }
 

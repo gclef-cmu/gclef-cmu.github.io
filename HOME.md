@@ -11,3 +11,12 @@ The Generative Creativity Lab is led by <a class="link-plain" href="https://chri
 ## Recent Highlights
 
 {{RESEARCH_HIGHLIGHTS}}
+
+
+
+
+## Supporters
+
+The G-CLef lab is supported by generous contributions from:
+
+{{SUPPORTERS_HTML}}

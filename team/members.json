@@ -57,5 +57,34 @@
       "website": "https://satvik-dixit.github.io/",
       "photo": "satvik.jpeg"
     }
+  ],
+  "alumni": [
+    {
+      "name": "Yichen (William) Huang",
+      "type": "Visiting Researcher",
+      "department": "",
+      "email": "",
+      "website": "https://www.yichenwilliamhuang.com/",
+      "photo": "",
+      "status": ""
+    },
+    {
+      "name": "Xun (Rick) Zhou",
+      "type": "MS Student",
+      "department": "",
+      "email": "",
+      "website": "",
+      "photo": "",
+      "status": "Now Quant @ Minhong "
+    },
+    {
+      "name": "Shih-Lun Wu",
+      "type": "MS Student",
+      "department": "",
+      "email": "",
+      "website": "https://slseanwu.github.io/",
+      "photo": "",
+      "status": "Now a Ph.D. Student at MIT EECS"
+    }
   ]
 }
