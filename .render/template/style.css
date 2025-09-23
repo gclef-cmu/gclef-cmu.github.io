@@ -926,6 +926,7 @@ Team page specific styles
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
     margin: 32px 0;
+    margin-bottom: 80px;
 }
 
 .research-card {
@@ -1179,6 +1180,7 @@ Team page specific styles
         grid-template-columns: 1fr;
         gap: 16px;
         margin: 24px 0;
+        margin-bottom: 50px;
     }
     
     .research-card-content {
