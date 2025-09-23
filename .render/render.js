@@ -139,7 +139,7 @@ function parseFirstH1(md) {
 /*
 Map a source .md path to its output HTML file path. Examples:
 
-- README.md -> _site/index.html (home page)
+- HOME.md -> _site/index.html (home page)
 - foo.md -> _site/foo/index.html
 - foo/index.md -> _site/foo/index.html
 - foo/bar.md -> _site/foo/bar/index.html
@@ -152,8 +152,8 @@ function computeOutputHtmlPath(mdPath, homeMdBasename) {
 
     // Home page special cases
     // - Configured home page
-    // - Conventional root README.md
-    if (dir === "." && (base === homeMdBasename || base === "README.md")) {
+    // - Conventional root HOME.md
+    if (dir === "." && (base === homeMdBasename || base === "HOME.md")) {
         return path.join(OUTPUT_ROOT, "index.html");
     }
 
