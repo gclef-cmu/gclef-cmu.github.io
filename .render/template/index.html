@@ -6,9 +6,22 @@
         <meta name="description" content="{{DESCRIPTION}}" />
         <title>{{TITLE}}</title>
         <link rel="stylesheet" href="{{STYLESHEET_HREF}}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     </head>
     <body>
         {{NAV}}
         <main class="container">{{CONTENT}}</main>
+        {{FOOTER}}
+        
+        <script>
+        function toggleBibtex(id) {
+            const bibtexDiv = document.getElementById('bibtex-' + id);
+            if (bibtexDiv.style.display === 'none' || bibtexDiv.style.display === '') {
+                bibtexDiv.style.display = 'block';
+            } else {
+                bibtexDiv.style.display = 'none';
+            }
+        }
+        </script>
     </body>
 </html>
