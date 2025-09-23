@@ -78,3 +78,75 @@
     location = {Pittsburgh, PA, USA},
     series = {UIST '24}
 }
+
+@inproceedings{2024weido,
+        title={Do Music Generation Models Encode Music Theory?},
+        author={Wei, Megan and Freeman, Michael and Donahue, Chris and Sun, Chen},
+        booktitle={International Society for Music Information Retrieval},
+        year={2024}
+    }
+
+@article{2024mafoundation,
+  title={Foundation Models for Music: A Survey},
+  author={Ma, Yinghao and {\O}land, Anders and Ragni, Anton and Del Sette, Bleiz MacSen and Saitis, Charalampos and Donahue, Chris and Lin, Chenghua and Plachouras, Christos and Benetos, Emmanouil and Shatri, Elona and others},
+  journal={arXiv preprint arXiv:2408.14340},
+  year={2024}
+}
+
+@article{2024musiccontrolnet,
+author = {Wu, Shih-Lun and Donahue, Chris and Watanabe, Shinji and Bryan, Nicholas J.},
+title = {Music ControlNet: Multiple Time-Varying Controls for Music Generation},
+year = {2024},
+issue_date = {2024},
+publisher = {IEEE Press},
+volume = {32},
+issn = {2329-9290},
+url = {https://doi.org/10.1109/TASLP.2024.3399026},
+doi = {10.1109/TASLP.2024.3399026},
+abstract = {Text-to-music generation models are now capable of generating high-quality music audio in broad styles. However, text control is primarily suitable for the manipulation of <italic>global</italic> musical attributes like genre, mood, and tempo, and is less suitable for precise control over <italic>time-varying</italic> attributes such as the positions of beats in time or the changing dynamics of the music. We propose Music ControlNet, a diffusion-based music generation model that offers multiple precise, time-varying controls over generated audio. To imbue text-to-music models with time-varying control, we propose an approach analogous to pixel-wise control of the image-domain ControlNet method. Specifically, we extract controls from training audio yielding paired data, and fine-tune a diffusion-based conditional generative model over audio spectrograms given melody, dynamics, and rhythm controls. While the image-domain Uni-ControlNet method already allows generation with any subset of controls, we devise a new masking strategy to allow creators to input controls that are only partially specified in time. We evaluate both on controls extracted from audio and controls we expect creators to provide, demonstrating that we can generate realistic music that corresponds to control inputs in both settings. While few comparable music generation models exist, we benchmark against MusicGen, a recent model that accepts text and melody input, and show that our model generates music that is 49% more faithful to input melodies despite having 35x fewer parameters, training on 11x less data, and enabling two additional forms of time-varying control. Sound examples can be found at <uri>https://musiccontrolnet.github.io/web/</uri>.},
+journal = {IEEE/ACM Trans. Audio, Speech and Lang. Proc.},
+month = may,
+pages = {2692–2703},
+numpages = {12}
+}
+
+@InProceedings{2024realchords,
+  title = 	 {Adaptive Accompaniment with {R}ea{L}chords},
+  author =       {Wu, Yusong and Cooijmans, Tim and Kastner, Kyle and Roberts, Adam and Simon, Ian and Scarlatos, Alexander and Donahue, Chris and Tarakajian, Cassie and Omidshafiei, Shayegan and Courville, Aaron and Castro, Pablo Samuel and Jaques, Natasha and Huang, Cheng-Zhi Anna},
+  booktitle = 	 {Proceedings of the 41st International Conference on Machine Learning},
+  pages = 	 {53328--53345},
+  year = 	 {2024},
+  editor = 	 {Salakhutdinov, Ruslan and Kolter, Zico and Heller, Katherine and Weller, Adrian and Oliver, Nuria and Scarlett, Jonathan and Berkenkamp, Felix},
+  volume = 	 {235},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {21--27 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://raw.githubusercontent.com/mlresearch/v235/main/assets/wu24c/wu24c.pdf},
+  url = 	 {https://proceedings.mlr.press/v235/wu24c.html},
+  abstract = 	 {Jamming requires coordination, anticipation, and collaborative creativity between musicians. Current generative models of music produce expressive output but are not able to generate in an online manner, meaning simultaneously with other musicians (human or otherwise). We propose ReaLchords, an online generative model for improvising chord accompaniment to user melody. We start with an online model pretrained by maximum likelihood, and use reinforcement learning to finetune the model for online use. The finetuning objective leverages both a novel reward model that provides feedback on both harmonic and temporal coherency between melody and chord, and a divergence term that implements a novel type of distillation from a teacher model that can see the future melody. Through quantitative experiments and listening tests, we demonstrate that the resulting model adapts well to unfamiliar input and produce fitting accompaniment. ReaLchords opens the door to live jamming, as well as simultaneous co-creation in other modalities.}
+}
+
+@article{2024anticipatory,
+  title={Anticipatory Music Transformer},
+  author={Thickstun, John and Hall, David and Donahue, Chris and Liang, Percy},
+  journal={arXiv preprint arXiv:2306.08620},
+  year={2023}
+}
+
+@article{2024v2meow,
+  title={V2Meow: Meowing to the Visual Beat via Video-to-Music Generation},
+  author={Su, Kun and Li, Judith Yue and Huang, Qingqing and Kuzmin, Dima and Lee, Joonseok and Donahue, Chris and Sha, Fei and Jansen, Aren and Wang, Yu and Verzetti, Mauro and Denk, Timo},
+  journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
+  number={5},
+  year={2024},
+  month={Mar.},
+  pages={4952-4960}
+}
+
+@article{2023singsong,
+  title={{SingSong}: Generating musical accompaniments from singing},
+  author={Donahue, Chris and Caillon, Antoine and Roberts, Adam and Manilow, Ethan and Esling, Philippe and Agostinelli, Andrea and Verzetti, Mauro and Simon, Ian and Pietquin, Olivier and Zeghidour, Neil and Engel, Jesse},
+  journal={arXiv:2301.12662},
+  year={2023}
+}
