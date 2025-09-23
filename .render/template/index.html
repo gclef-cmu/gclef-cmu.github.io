@@ -15,6 +15,12 @@
         <main class="container">{{CONTENT}}</main>
         {{FOOTER}}
         
+        <!-- Image Modal -->
+        <div id="imageModal" class="image-modal">
+            <span class="image-modal-close">&times;</span>
+            <img class="image-modal-content" id="modalImage">
+        </div>
+        
         <script>
         function toggleBibtex(id) {
             const bibtexDiv = document.getElementById('bibtex-' + id);
@@ -24,6 +30,61 @@
                 bibtexDiv.style.display = 'none';
             }
         }
+        
+        // Image modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.image-modal-close');
+            
+            // Add click listeners to all preview and project images
+            const previewImages = document.querySelectorAll('.preview-image, .project-image');
+            previewImages.forEach(function(img) {
+                img.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Show modal with display first, then trigger animation
+                    modal.style.display = 'flex';
+                    // Force reflow to ensure display is applied
+                    modal.offsetHeight;
+                    // Add active class for animation
+                    modal.classList.add('active');
+                    modalImg.src = this.src;
+                    modalImg.alt = this.alt;
+                });
+            });
+            
+            // Close modal when clicking the X button
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+                // Hide modal after animation completes
+                setTimeout(function() {
+                    modal.style.display = 'none';
+                }, 300);
+            });
+            
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    // Hide modal after animation completes
+                    setTimeout(function() {
+                        modal.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    // Hide modal after animation completes
+                    setTimeout(function() {
+                        modal.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
         </script>
     </body>
 </html>
