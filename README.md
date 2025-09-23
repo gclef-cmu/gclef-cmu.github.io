@@ -50,7 +50,7 @@ This repo manages team profiles and publications via JSON files + static assets.
 3. **Assets (use same `{id}`)**
 
    * PDF → `static/pdfs/{id}.pdf`
-   * Preview image → `static/previews/{id}.png` (or `.jpg`)
+   * Preview image → `static/previews/{id}.{file_extension}` (e.g., `2025newpaper.png`)
    * BibTeX entry → in `research/bibtex.bib`:
 
      ```bibtex
