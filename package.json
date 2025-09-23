@@ -1,0 +1,26 @@
+{
+  "name": "gclef-cmu.github.io",
+  "version": "1.0.0",
+  "description": "<img src=\"./static/logo.png\" width=\"200px\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gclef-cmu/gclef-cmu.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gclef-cmu/gclef-cmu.github.io/issues"
+  },
+  "homepage": "https://github.com/gclef-cmu/gclef-cmu.github.io#readme",
+  "devDependencies": {
+    "dompurify": "^3.2.7",
+    "js-yaml": "^4.1.0",
+    "jsdom": "^20.0.3",
+    "marked": "^4.3.0"
+  }
+}

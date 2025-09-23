@@ -18,10 +18,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Package files
-package-lock.json
-package.json
-
 # Static files with system artifacts
 static/.DS_Store
 
