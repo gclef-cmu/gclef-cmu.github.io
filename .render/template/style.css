@@ -398,42 +398,20 @@ video {
     color: var(--header-bg);
 }
 
-.nav-toggle {
-    display: none;
-}
-
-.hamburger {
-    display: none;
-    width: 32px;
-    height: 24px;
-    flex-shrink: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    padding: 0;
-    border: none;
-    background: none;
-    position: relative;
-}
-
-.hamburger span {
-    display: block;
-    width: 24px;
-    height: 3px;
-    background: var(--text-color);
-    border-radius: 2px;
-    margin: 2px 0;
-    transition: all 0.3s ease;
-}
 
 @media (max-width: 640px) {
-    /* :root {
-        --nav-offset: 96px;
-    } */
-    
-    .hamburger { 
-        display: flex; 
+    :root {
+        --nav-offset: 105px;
+    }
+
+    h2 {
+        font-size: 1.75em;
+        margin-top: 0px;
+    }
+
+    .site-logo {
+        margin: 0 0 4px 0;
+        /* margin-bottom: 0px; */
     }
     
     .site-nav .site-title { 
@@ -442,42 +420,41 @@ video {
     }
     
     .site-nav .inner {
-        flex-wrap: nowrap;
-        overflow: hidden;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
     
     .site-nav .site-links {
-        display: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         width: 100%;
-        padding-top: 8px;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        gap: 8px;
     }
     
     .site-nav .site-links a { 
-        display: block; 
-        margin: 8px 0;
-        padding: 8px 16px;
+        display: inline-block; 
+        margin: 0;
+        padding: 4px 8px;
         border-radius: 4px;
         transition: background-color 0.2s ease;
+        white-space: nowrap;
     }
     
-    .site-nav .site-links a:hover {
-        background-color: var(--hover-bg-color);
+    /* Ensure main content is pushed down properly on mobile */
+    body {
+        padding-top: var(--nav-offset) !important;
     }
     
-    .nav-toggle:checked ~ .hamburger { 
-        opacity: 0.7;
+    main.container {
+        padding-top: calc(var(--content-padding) - 12px) !important;
     }
     
-    .nav-toggle:checked ~ .site-links { 
-        display: block; 
+    .home-page main.container {
+        padding-top: 0 !important;
     }
 }
 
