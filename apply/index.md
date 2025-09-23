@@ -2,11 +2,8 @@
 title: "Apply"
 ---
 
-# Applying to G-CLef
+<!-- # Applying to G-CLef -->
 
-## About G-CLef
-
-We are the [**Generative Creativity Lab (G-CLef)**](https://gclef-cmu.org) in the Computer Science Department (CSD) at Carnegie Mellon University. Our mission is to _empower and enrich human creativity with generative AI_. We focus primarily on the intersection of _music and AI_, though we also work on other applications such as code, gaming, and language. Our current research interests can be found [below](#research-interests). The G-CLef lab is led by [Chris Donahue](https://chrisdonahue.com), Dannenberg Assistant Professor at CMU CSD.
 
 ## Applying
 

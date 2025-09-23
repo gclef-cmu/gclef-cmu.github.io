@@ -1,0 +1,61 @@
+{
+  "faculty": [
+    {
+      "name": "Chris Donahue",
+      "bio": "Chris Donahue is an Dannenberg Assistant Professor at Computer Science Department (CSD) at CMU. Chris's research goal is to develop and responsibly deploy generative AI for music and creativity, thereby unlocking and augmenting human creative potential. Chris’s research has been featured in live performances by professional musicians like The Flaming Lips, and also empowers hundreds of daily users to convert their favorite music into interactive content through his website Beat Sage. His work has also received coverage from MIT Tech Review, The Verge, Business Insider, and Pitchfork. Before CMU, Chris was a postdoctoral scholar in the CS department at Stanford advised by Percy Liang. Chris holds a Ph.D. from UC San Diego where he was jointly advised by Miller Puckette (music) and Julian McAuley (CS).",
+      "email": "chrisdonahue@cmu.edu",
+      "website": "https://chrisdonahue.com",
+      "photo": "chris.jpeg"
+    }
+  ],
+  "students": [
+    {
+      "name": "Wayne Chi",
+      "type": "Ph.D. Student",
+      "department": "Computer Science",
+      "email": "waynechi@cs.cmu.edu",
+      "website": "https://waynechi.com/",
+      "photo": "wayne.jpeg"
+    },
+    {
+      "name": "Irmak Bukey",
+      "type": "Ph.D. Student",
+      "department": "Computer Science",
+      "email": "ibukey@andrew.cmu.edu",
+      "website": "https://irmakbky.github.io/",
+      "photo": "irmak.jpeg"
+    },
+    {
+      "name": "Yewon Kim",
+      "type": "Ph.D. Student",
+      "department": "Computer Science",
+      "email": "yewon@cmu.edu",
+      "website": "https://yewon-kim.com/",
+      "photo": "yewon.jpeg"
+    },
+    {
+      "name": "Nathan Pruyne",
+      "type": "Ph.D. Student",
+      "department": "Computer Science",
+      "email": "npruyne@andrew.cmu.edu",
+      "website": "https://nathanpruyne.com/",
+      "photo": "nathan.jpeg"
+    },
+    {
+      "name": "Alexander Wang",
+      "type": "Ph.D. Student",
+      "department": "Human-Computer Interaction",
+      "email": "aw4@andrew.cmu.edu",
+      "website": "https://ayw0.github.io/",
+      "photo": "alex.jpeg"
+    },
+    {
+      "name": "Satvik Dixit",
+      "type": "MS Student",
+      "department": "Electrical and Computer Engineering",
+      "email": "satvikdixit@cmu.edu",
+      "website": "https://satvik-dixit.github.io/",
+      "photo": "satvik.jpeg"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+    "publications": [
+        {
+            "id": "2025magentart",
+            "nickname": "Magenta RealTime",
+            "title": "Live Music Models",
+            "year": "2025",
+            "venue": "Arxiv",
+            "authors": "Lyria Team: Antoine Caillon, Brian McWilliams, Cassie Tarakajian, Ian Simon, Ilaria Manco, Jesse Engel, Noah Constant, Yunpeng Li, Timo I. Denk, Alberto Lalama, Andrea Agostinelli, Cheng-Zhi Anna Huang, Ethan Manilow, George Brower, Hakan Erdogan, Heidi Lei, Itai Rolnick, Ivan Grishchenko, Manu Orsini, Matej Kastelic, Mauricio Zuluaga, Mauro Verzetti, Michael Dooley, Ondrej Skopek, Rafael Ferrer, Zalán Borsos, Äaron van den Oord, Douglas Eck, Eli Collins, Jason Baldridge, Tom Hume, Chris Donahue, Kehang Han, Adam Roberts",
+            "abstract": "We introduce a new class of generative models for music called live music models that produce a continuous stream of music in real-time with synchronized user control. We release Magenta RealTime, an open-weights live music model that can be steered using text or audio prompts to control acoustic style. On automatic metrics of music quality, Magenta RealTime outperforms other open-weights music generation models, despite using fewer parameters and offering first-of-its-kind live generation capabilities. We also release Lyria RealTime, an API-based model with extended controls, offering access to our most powerful model with wide prompt coverage. These models demonstrate a new paradigm for AI-assisted music creation that emphasizes human-in-the-loop interaction for live music performance.",
+            "award": "",
+            "project_link": "https://magenta.withgoogle.com/lyria-realtime",
+            "blog_link": "",
+            "video_link": "",
+            "code_link": "https://github.com/magenta/magenta-realtime"
+        },
+        {
+            "id": "2025musicarena",
+            "nickname": "Music Arena",
+            "title": "Music Arena: Live Evaluation for Text-to-Music",
+            "year": "2025",
+            "venue": "Arxiv",
+            "authors": "Yonghyun Kim, Wayne Chi, Anastasios N. Angelopoulos, Wei-Lin Chiang, Koichi Saito, Shinji Watanabe, Yuki Mitsufuji, Chris Donahue",
+            "abstract": "We present Music Arena, an open platform for scalable human preference evaluation of text-to-music (TTM) models. Soliciting human preferences via listening studies is the gold standard for evaluation in TTM, but these studies are expensive to conduct and difficult to compare, as study protocols may differ across systems. Moreover, human preferences might help researchers align their TTM systems or improve automatic evaluation metrics, but an open and renewable source of preferences does not currently exist. We aim to fill these gaps by offering *live* evaluation for TTM. In Music Arena, real-world users input text prompts of their choosing and compare outputs from two TTM systems, and their preferences are used to compile a leaderboard. While Music Arena follows recent evaluation trends in other AI domains, we also design it with key features tailored to music: an LLM-based routing system to navigate the heterogeneous type signatures of TTM systems, and the collection of *detailed* preferences including listening data and natural language feedback. We also propose a rolling data release policy with user privacy guarantees, providing a renewable source of preference data and increasing platform transparency. Through its standardized evaluation protocol, transparent data access policies, and music-specific features, Music Arena not only addresses key challenges in the TTM ecosystem but also demonstrates how live evaluation can be thoughtfully adapted to unique characteristics of specific AI domains. Music Arena is available at: https://music-arena.org",
+            "award": "",
+            "project_link": "",
+            "blog_link": "/blog/posts/250919_MusicArena/",
+            "video_link": "",
+            "code_link": ""
+        },
+        {
+            "id": "2025huangaligning",
+            "nickname": "MusicPrefs",
+            "title": "Aligning Text-to-Music Evaluation with Human Preferences",
+            "year": "2025",
+            "venue": "ISMIR",
+            "authors": "Yichen Huang, Zachary Novack, Koichi Saito, Jiatong Shi, Shinji Watanabe, Yuki Mitsufuji, John Thickstun, Chris Donahue",
+            "abstract": "Despite significant recent advances in generative acoustic text-to-music (TTM) modeling, robust evaluation of these models lags behind, relying in particular on the popular Fréchet Audio Distance (FAD). In this work, we rigorously study the design space of reference-based divergence metrics for evaluating TTM models through (1) designing four synthetic meta-evaluations to measure sensitivity to particular musical desiderata, and (2) collecting and evaluating on MusicPrefs, the first open-source dataset of human preferences for TTM systems. We find that not only is the standard FAD setup inconsistent on both synthetic and human preference data, but that nearly all existing metrics fail to effectively capture desiderata, and are only weakly correlated with human perception. We propose a new metric, the MAUVE Audio Divergence (MAD), computed on representations from a self-supervised audio embedding model. We find that this metric effectively captures diverse musical desiderata (average rank correlation 0.84 for MAD vs. 0.49 for FAD and also correlates more strongly with MusicPrefs (0.62 vs. 0.14).",
+            "award": "",
+            "project_link": "",
+            "blog_link": "",
+            "video_link": "",
+            "code_link": ""
+        },
+        {
+            "id": "2025copilotarena",
+            "nickname": "Copilot Arena",
+            "title": "Copilot Arena: A Platform for Code LLM Evaluation in the Wild",
+            "year": "2025",
+            "venue": "ICML",
+            "authors": "Wayne Chi, Valerie Chen, Anastasios Nikolas Angelopoulos, Wei-Lin Chiang, Aditya Mittal, Naman Jain, Tianjun Zhang, Ion Stoica, Chris Donahue, Ameet Talwalkar",
+            "abstract": "Evaluating in-the-wild coding capabilities of large language models (LLMs) is a challenging endeavor with no clear solution. We introduce Copilot Arena, a platform to collect user preferences for code generation through native integration into a developer's working environment. Copilot Arena comprises a novel interface for comparing pairs of model outputs, a sampling strategy optimized to reduce latency, and a prompting scheme to enable code completion functionality. Copilot Arena has served over 4.5 million suggestions from 10 models and collected over 11k pairwise judgements. Our results highlight the importance of model evaluations in integrated settings. We find that model rankings from Copilot Arena differ from those of existing evaluations, which we attribute to the more realistic distribution of data and tasks contained in Copilot Arena. We also identify novel insights into human preferences on code such as an observed consistency in user preference across programming languages yet significant variation in preference due to task category. We open-source Copilot Arena and release data to enable human-centric evaluations and improve understanding of coding assistants.",
+            "award": "",
+            "project_link": "",
+            "blog_link": "",
+            "video_link": "",
+            "code_link": "https://github.com/lm-sys/copilot-arena"
+        },
+        {
+            "id": "2025kimamuse",
+            "nickname": "Amuse",
+            "title": "Amuse: Human-AI Collaborative Songwriting with Multimodal Inspirations",
+            "year": "2025",
+            "venue": "CHI",
+            "authors": "Yewon Kim, Sung-Ju Lee, Chris Donahue",
+            "abstract": "Songwriting is often driven by multimodal inspirations, such as imagery, narratives, or existing music, yet songwriters remain unsupported by current music AI systems in incorporating these multimodal inputs into their creative processes. We introduce Amuse, a songwriting assistant that transforms multimodal (image, text, or audio) inputs into chord progressions that can be seamlessly incorporated into songwriters' creative processes. A key feature of Amuse is its novel method for generating coherent chords that are relevant to music keywords in the absence of datasets with paired examples of multimodal inputs and chords. Specifically, we propose a method that leverages multimodal large language models (LLMs) to convert multimodal inputs into noisy chord suggestions and uses a unimodal chord model to filter the suggestions. A user study with songwriters shows that Amuse effectively supports transforming multimodal ideas into coherent musical suggestions, enhancing users' agency and creativity throughout the songwriting process.",
+            "award": "Best Paper Award",
+            "project_link": "https://yewon-kim.com/amuse/",
+            "blog_link": "",
+            "video_link": "https://youtu.be/FbFD3B2OCo8?si=r5UnZtwYiXiOolgK",
+            "code_link": "https://github.com/elianakim/Amuse"
+        },
+        {
+            "id": "2024justlabel",
+            "nickname": "Just Label the Repeats",
+            "title": "Just Label the Repeats for In-The-Wild Audio-to-Score Alignment",
+            "year": "2024",
+            "venue": "ISMIR",
+            "authors": "Irmak Bukey, Michael Feffer, Chris Donahue",
+            "abstract": "We propose an efficient workflow for high-quality offline alignment of in-the-wild performance audio and corresponding sheet music scans (images). Recent work on audio-to-score alignment extends dynamic time warping (DTW) to be theoretically able to handle jumps in sheet music induced by repeat signs-this method requires no human annotations, but we show that it often yields low-quality alignments. As an alternative, we propose a workflow and interface that allows users to quickly annotate jumps (by clicking on repeat signs), requiring a small amount of human supervision but yielding much higher quality alignments on average. Additionally, we refine audio and score feature representations to improve alignment quality by: (1) integrating measure detection into the score feature representation, and (2) using raw onset prediction probabilities from a music transcription model instead of piano roll. We propose an evaluation protocol for audio-to-score alignment that computes the distance between the estimated and ground truth alignment in units of measures. Under this evaluation, we find that our proposed jump annotation workflow and improved feature representations together improve alignment accuracy by 150% relative to prior work (33% to 82%).",
+            "award": "",
+            "project_link": "",
+            "blog_link": "",
+            "video_link": "https://bit.ly/jltr-ismir2024",
+            "code_link": "https://github.com/irmakbky/jltr-alignment"
+        },
+        {
+            "id": "2024wangtowards",
+            "nickname": "Music-Aware Virtual Assistants",
+            "title": "Towards Music-Aware Virtual Assistants",
+            "year": "2024",
+            "venue": "UIST",
+            "authors": "Alexander Wang, David Lindlbauer, Chris Donahue",
+            "abstract": "We propose a system for modifying spoken notifications in a manner that is sensitive to the music a user is listening to. Spoken notifications provide convenient access to rich information without the need for a screen. Virtual assistants see prevalent use in hands-free settings such as driving or exercising, activities where users also regularly enjoy listening to music. In such settings, virtual assistants will temporarily mute a user’s music to improve intelligibility. However, users may perceive these interruptions as intrusive, negatively impacting their music-listening experience. To address this challenge, we propose the concept of music-aware virtual assistants, where speech notifications are modified to resemble a voice singing in harmony with the user’s music. We contribute a system that processes user music and notification text to produce a blended mix, replacing original song lyrics with the notification content. In a user study comparing musical assistants to standard virtual assistants, participants expressed that musical assistants fit better with music, reduced intrusiveness, and provided a more delightful listening experience overall.",
+            "award": "",
+            "project_link": "https://ayw0.github.io/publications/2024-MVA/",
+            "blog_link": "",
+            "video_link": "https://www.youtube.com/watch?v=CRGXo4Rg5uM",
+            "code_link": ""
+        }
+    ]
+}

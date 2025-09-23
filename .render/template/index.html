@@ -6,9 +6,76 @@
         <meta name="description" content="{{DESCRIPTION}}" />
         <title>{{TITLE}}</title>
         <link rel="stylesheet" href="{{STYLESHEET_HREF}}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     </head>
     <body>
         {{NAV}}
         <main class="container">{{CONTENT}}</main>
+        {{FOOTER}}
+        
+        <script>
+        function toggleBibtex(id) {
+            const bibtexDiv = document.getElementById('bibtex-' + id);
+            if (bibtexDiv.style.display === 'none' || bibtexDiv.style.display === '') {
+                bibtexDiv.style.display = 'block';
+            } else {
+                bibtexDiv.style.display = 'none';
+            }
+        }
+
+        // Hamburger menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const closeBtn = document.getElementById('close-btn');
+            const siteLinks = document.getElementById('site-links');
+            const hamburgerSpans = hamburgerBtn.querySelectorAll('span');
+
+            function openMenu() {
+                siteLinks.classList.add('menu-open');
+                hamburgerBtn.classList.add('menu-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+
+            function closeMenu() {
+                siteLinks.classList.remove('menu-open');
+                hamburgerBtn.classList.remove('menu-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            // Open menu when hamburger is clicked
+            hamburgerBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (siteLinks.classList.contains('menu-open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            // Close menu when close button is clicked
+            closeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                closeMenu();
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (siteLinks.classList.contains('menu-open') && 
+                    !siteLinks.contains(e.target) && 
+                    !hamburgerBtn.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && siteLinks.classList.contains('menu-open')) {
+                    closeMenu();
+                }
+            });
+        });
+        </script>
     </body>
 </html>
