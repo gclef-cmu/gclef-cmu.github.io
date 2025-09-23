@@ -351,6 +351,36 @@ async function loadResearchData() {
     }
 }
 
+/* Load supporters data from JSON file */
+async function loadSupportersData() {
+    const supportersPath = path.join(REPO_ROOT, "supporters.json");
+    try {
+        const raw = await fs.readFile(supportersPath, "utf-8");
+        return JSON.parse(raw);
+    } catch (error) {
+        console.warn(`Warning: Could not load supporters data:`, error.message);
+        return [];
+    }
+}
+
+/* Generate supporters HTML from supporters data */
+function generateSupportersHtml(supportersData) {
+    if (!supportersData || supportersData.length === 0) {
+        return "";
+    }
+    
+    let html = '<div class="supporters-container">\n';
+    
+    supportersData.forEach(supporter => {
+        html += `  <a href="${supporter.link}" target="_blank" rel="noopener noreferrer">\n`;
+        html += `    <img src="${supporter.image}" alt="${supporter.name}">\n`;
+        html += `  </a>\n`;
+    });
+    
+    html += '</div>';
+    return html;
+}
+
 /* Generate faculty content HTML from members data */
 function generateFacultyContent(membersData) {
     let html = "";
@@ -747,7 +777,7 @@ Render a single markdown file to an HTML page:
 - Writes the final HTML to the computed output path
 */
 async function renderPage(mdPath, ctx) {
-    const { template, purify, navItems, stylesheet, config, navTemplate, footerTemplate, membersData, researchData, bibtexData } = ctx;
+    const { template, purify, navItems, stylesheet, config, navTemplate, footerTemplate, membersData, researchData, bibtexData, supportersData } = ctx;
     const homeMdBasename = path.basename(config.home_md);
 
     // Special handling for team and research pages - generate content from JSON data
@@ -778,6 +808,10 @@ async function renderPage(mdPath, ctx) {
         // Generate research highlights and replace placeholder
         const researchHighlights = await generateResearchHighlights(researchData);
         body = body.replace('{{RESEARCH_HIGHLIGHTS}}', researchHighlights);
+        
+        // Generate supporters HTML and replace placeholder
+        const supportersHtml = generateSupportersHtml(supportersData);
+        body = body.replace('{{SUPPORTERS_HTML}}', supportersHtml);
     } else if (mdPath.includes('/research/') && mdPath.endsWith('/index.md')) {
         // Handle individual project pages
         const projectId = path.basename(path.dirname(mdPath));
@@ -958,6 +992,7 @@ async function buildSite() {
     const membersData = await loadMembersData();
     const researchData = await loadResearchData();
     const bibtexData = await loadBibtexData();
+    const supportersData = await loadSupportersData();
     const purify = DOMPurify(new JSDOM("").window);
 
     // Copy static files
@@ -999,6 +1034,7 @@ async function buildSite() {
             membersData,
             researchData,
             bibtexData,
+            supportersData,
         });
     }
 

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Sony AI",
+    "image": "static/logos/sonyai.webp",
+    "link": "https://ai.sony/"
+  },
+  {
+    "name": "Adobe Research",
+    "image": "static/logos/adobe.webp",
+    "link": "https://research.adobe.com/"
+  },
+  {
+    "name": "Hooktheory",
+    "image": "static/logos/hooktheory.webp",
+    "link": "https://www.hooktheory.com/"
+  },
+  {
+    "name": "KLab",
+    "image": "static/logos/klab.webp",
+    "link": "https://www.klab.com/"
+  }
+]

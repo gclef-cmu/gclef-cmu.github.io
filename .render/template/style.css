@@ -114,22 +114,6 @@ main.container {
     margin-bottom: 24px;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-    
-    /* Fix full-width background on mobile */
-    .home-page main.container > h1:first-child,
-    .home-page main.container > h1:first-child + p,
-    .home-page main.container > h1:first-child + p + p {
-        margin-left: -1rem;
-        margin-right: -1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-
 /* Typography */
 h1,
 h2,
@@ -399,92 +383,7 @@ video {
 }
 
 
-@media (max-width: 640px) {
-    :root {
-        --nav-offset: 105px;
-    }
 
-    h2 {
-        font-size: 1.75em;
-        margin-top: 0px;
-    }
-
-    .site-logo {
-        margin: 0 0 4px 0;
-        /* margin-bottom: 0px; */
-    }
-
-
-    .footer-logo {
-        height: 32px;
-        width: auto;
-        display: block;
-        object-fit: contain;
-        max-width: 100%;
-    }
-    
-    /* Ensure SVGs display properly */
-    .footer-logo[src$=".svg"] {
-        height: 32px;
-        width: auto;
-    }
-    
-    .site-nav .site-title { 
-        margin-right: 0; 
-        font-size: 1.4rem;
-    }
-    
-    .site-nav .inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
-    
-    .site-nav .site-links {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        gap: 8px;
-    }
-    
-    .site-nav .site-links a { 
-        display: inline-block; 
-        margin: 0;
-        padding: 4px 8px;
-        border-radius: 4px;
-        transition: background-color 0.2s ease;
-        white-space: nowrap;
-    }
-    
-    /* Ensure main content is pushed down properly on mobile */
-    body {
-        padding-top: var(--nav-offset) !important;
-    }
-    
-    main.container {
-        padding-top: calc(var(--content-padding) - 12px) !important;
-    }
-    
-    .home-page main.container {
-        padding-top: 0 !important;
-    }
-    
-}
-
-/* Print styles */
-@media print {
-    body {
-        background: white;
-        color: black;
-    }
-
-    .container {
-        max-width: 100%;
-    }
-}
 
 /* Footer */
 .site-footer {
@@ -656,57 +555,6 @@ Team page specific styles
     margin: 0;
     font-size: 0.9em;
     color: #666;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .students-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-    }
-    
-    .team-headshot {
-        width: 220px;
-        height: 220px;
-    }
-}
-
-@media (max-width: 640px) {
-    .faculty-member {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        gap: 24px;
-    }
-    
-    .faculty-photo {
-        align-self: flex-start;
-    }
-    
-    .students-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-    
-    .team-headshot {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .students-grid {
-        gap: 10px;
-    }
-    
-    .student-card {
-        padding: 16px 12px;
-    }
-    
-    .team-headshot {
-        width: 150px;
-        height: 150px;
-    }
 }
 
 /* Research page specific styles */
@@ -883,20 +731,6 @@ Team page specific styles
     /* color: white; */
 }
 
-/* Responsive adjustments for research page */
-@media (max-width: 768px) {
-    .publication {
-        flex-direction: column;
-        gap: 16px;
-    }
-    
-    .publication-preview {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-}
-
 /* Recent Highlights Section */
 .recent-highlights {
     margin: 48px 0;
@@ -973,28 +807,6 @@ Team page specific styles
     font-weight: 500;
 }
 
-/* Responsive adjustments for highlights */
-@media (max-width: 1024px) {
-    .highlights-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .highlights-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-    
-    .highlight-preview {
-        height: 180px;
-    }
-    
-    .highlight-content {
-        padding: 16px;
-    }
-}
 
 /* Project page specific styles */
 .project-title {
@@ -1082,18 +894,6 @@ Team page specific styles
     background-color: var(--hover-bg-color);
 }
 
-@media (max-width: 768px) {
-    .project-header {
-        flex-direction: column;
-        gap: 24px;
-    }
-    
-    .project-preview {
-        width: 100%;
-        max-width: 400px;
-        margin: 24px auto;
-    }
-}
 
 /* Research Highlights Styles */
 .research-highlights {
@@ -1185,27 +985,6 @@ Team page specific styles
     gap: 12px;
 }
 
-/* Responsive design for research highlights */
-@media (max-width: 768px) {
-    .research-highlights {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        margin: 24px 0;
-    }
-    
-    .research-card-content {
-        padding: 16px;
-    }
-    
-    .research-card-image {
-        height: 160px;
-    }
-    
-    .research-card-meta {
-        align-items: flex-start;
-        gap: 8px;
-    }
-}
 
 /* Image Modal Overlay */
 .image-modal {
@@ -1268,7 +1047,262 @@ Team page specific styles
     color: #ccc;
 }
 
-/* Make project images clickable */
+/* Make project images clickable (only on individual project pages) */
 .project-image {
     cursor: pointer;
+}
+
+/* Supporters section */
+.supporters-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: nowrap;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.supporters-container a {
+    text-decoration: none;
+}
+
+.supporters-container img {
+    height: 40px;
+    width: auto;
+    transition: opacity 0.2s ease;
+}
+
+.supporters-container img:hover {
+    opacity: 0.8;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - ALL MEDIA QUERIES
+   ======================================== */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+    .students-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+    
+    .team-headshot {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    /* Fix full-width background on mobile */
+    .home-page main.container > h1:first-child,
+    .home-page main.container > h1:first-child + p,
+    .home-page main.container > h1:first-child + p + p {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .publication {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .publication-preview {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .highlights-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .highlight-preview {
+        height: 180px;
+    }
+    
+    .highlight-content {
+        padding: 16px;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .project-preview {
+        width: 100%;
+        max-width: 400px;
+        margin: 24px auto;
+    }
+    
+    .research-highlights {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 24px 0;
+    }
+    
+    .research-card-content {
+        padding: 16px;
+    }
+    
+    .research-card-image {
+        height: 160px;
+    }
+    
+    .research-card-meta {
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 640px) {
+    :root {
+        --nav-offset: 105px;
+    }
+
+    h2 {
+        font-size: 1.75em;
+        margin-top: 0px;
+    }
+
+    .site-logo {
+        margin: 0 0 4px 0;
+    }
+
+    .footer-logo {
+        height: 32px;
+        width: auto;
+        display: block;
+        object-fit: contain;
+        max-width: 100%;
+    }
+    
+    /* Ensure SVGs display properly */
+    .footer-logo[src$=".svg"] {
+        height: 32px;
+        width: auto;
+    }
+    
+    .site-nav .site-title { 
+        margin-right: 0; 
+        font-size: 1.4rem;
+    }
+    
+    .site-nav .inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    
+    .site-nav .site-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .site-nav .site-links a { 
+        display: inline-block; 
+        margin: 0;
+        padding: 4px 8px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+        white-space: nowrap;
+    }
+    
+    .site-nav .site-links a:hover {
+        background-color: var(--hover-bg-color);
+    }
+    
+    /* Ensure main content is pushed down properly on mobile */
+    body {
+        padding-top: var(--nav-offset) !important;
+    }
+    
+    main.container {
+        padding-top: calc(var(--content-padding) - 12px) !important;
+    }
+    
+    .home-page main.container {
+        padding-top: 0 !important;
+    }
+    
+    /* Supporters mobile layout */
+    .supporters-container {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+
+    .supporters-container img {
+        height: 30px;
+    }
+    
+    .faculty-member {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 24px;
+    }
+    
+    .faculty-photo {
+        align-self: flex-start;
+    }
+    
+    .students-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .team-headshot {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+    .students-grid {
+        gap: 10px;
+    }
+    
+    .student-card {
+        padding: 16px 12px;
+    }
+    
+    .team-headshot {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .container {
+        max-width: 100%;
+    }
 }

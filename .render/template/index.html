@@ -37,9 +37,9 @@
             const modalImg = document.getElementById('modalImage');
             const closeBtn = document.querySelector('.image-modal-close');
             
-            // Add click listeners to all preview and project images
-            const previewImages = document.querySelectorAll('.preview-image, .project-image');
-            previewImages.forEach(function(img) {
+            // Add click listeners only to project images (not preview images in highlights)
+            const projectImages = document.querySelectorAll('.project-image');
+            projectImages.forEach(function(img) {
                 img.addEventListener('click', function(e) {
                     e.preventDefault();
                     
