@@ -4,7 +4,7 @@
 
 You can [**install Pure Vibes by following these instructions**](https://github.com/gclef-cmu/pure-vibes#quick-start).
 
-Please leave **feedback** on [this Google form](https://forms.gle/TRDoD46YURA8N41Z8). If you prefer, you may also open up a [GitHub issue](https://github.com/gclef-cmu/pure-vibes/issues).
+Please [leave **feedback** on this Google form](https://forms.gle/TRDoD46YURA8N41Z8). If you prefer, you may also [open a GitHub issue](https://github.com/gclef-cmu/pure-vibes/issues).
 
 Pure Vibes is 100% **open source** - see our [GitHub repo](https://github.com/gclef-cmu/pure-vibes).
 
