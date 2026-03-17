@@ -10,4 +10,4 @@ If you prefer, you may also open up a [GitHub issue](https://github.com/gclef-cm
 
 A mailing list is coming soon.
 
-**Privacy statement**. The developers of Pure Vibes do not collect any of your usage data. Please leave all feedback on the form above.
+**Privacy statement**. The developers of Pure Vibes do not collect any of your usage data. Please leave all feedback for the Pure Vibes devs on the form above. Many AI agent providers (e.g. Anthropic, OpenAI) _will_ collect your usage data, subject to their own terms of service.
