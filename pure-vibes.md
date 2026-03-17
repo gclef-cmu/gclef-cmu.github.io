@@ -1,12 +1,12 @@
 # Pure Vibes
 
-Pure Vibes is an extension to Pure Data allowing for AI agent control.
+**_Pure Vibes_ is a lightweight extension to [Pure Data](https://puredata.info) allowing for AI agent control**. It allows agents like Claude Desktop to help you create and understand patches. Try "Using Pure Vibes, create me an ambient sound synthesizer"!
 
-You can [install Pure Vibes by following these instructions](https://github.com/gclef-cmu/pure-vibes#quick-start).
+You can [**install Pure Vibes by following these instructions**](https://github.com/gclef-cmu/pure-vibes#quick-start).
 
-Please leave feedback on [this Google form](https://forms.gle/TRDoD46YURA8N41Z8). 
+Please leave **feedback** on [this Google form](https://forms.gle/TRDoD46YURA8N41Z8). If you prefer, you may also open up a [GitHub issue](https://github.com/gclef-cmu/pure-vibes/issues).
 
-If you prefer, you may also open up a [GitHub issue](https://github.com/gclef-cmu/pure-vibes/issues).
+Pure Vibes is 100% **open source** - see our [GitHub repo](https://github.com/gclef-cmu/pure-vibes).
 
 A mailing list is coming soon.
 
