@@ -1,5 +1,33 @@
 {
     "publications": [
+           {
+            "id": "2026multiverse",
+            "nickname": "MultiVerse",
+            "title": "MultiVerse: A Creator-Centered Approach to Steering Context-Adaptive Lyrics",
+            "year": "2026",
+            "venue": "UIST",
+            "authors": "Alexander Wang, Chris Donahue, David Lindlbauer",
+            "abstract": "Generative AI may enable new forms of context-aware creative expression by dynamically tailoring media content to its consumption context. For instance, AI systems could adapt song lyrics to the listener and their current activity. However, existing media adaptation systems primarily optimize for audience experience, often neglecting artists' intent, style, and preference. We address this challenge by introducing a novel creator-centered approach to adaptive media authoring and present MultiVerse, a system that instantiates this approach for steering adaptive lyrics. Our approach allows creators to explicitly author controls based on their intent, lyric structure, and audience context, and uses rule-based validations to ensure controls are followed. We conducted a study with 10 songwriters, comparing MultiVerse with a prompting-based workflow for composing adaptive lyrics. The comparison revealed that creators preferred to author how lyrics adapt by explicitly specifying relevant context and adaptation constraints, while recognizing trade-offs in flexibility and iteration speed. Interviews further revealed that creators viewed adaptive media as enabling new forms of audience connection, introducing a distinct creative process, favoring new compositional strategies, and reshaping notions of authorship.",
+            "award": "",
+            "project_link": "https://ayw0.github.io/multiverse/",
+            "blog_link": "",
+            "video_link": "https://www.youtube.com/watch?v=oLWrkpCfTG8",
+            "code_link": ""
+        },
+        {
+            "id": "2025rise",
+            "nickname": "RISE",
+            "title": "RISE: Adaptive music playback for Realtime Intensity Synchronization with Exercise",
+            "year": "2025",
+            "venue": "ISMIR",
+            "authors": "Alexander Wang, Chris Donahue, Dhruv Jain",
+            "abstract": "We propose a system to adapt a user's music to their exercise by aligning high-energy music segments with intense intervals of the workout. Listening to music during exercise can boost motivation and performance. However, the structure of the music may be different from the user's natural phases of rest and work, causing users to rest longer than needed while waiting for a motivational section, or lose motivation mid-work if the section ends too soon. To address this, our system, called RISE, automatically estimates the intense segments in music and uses component-based music rearrangement techniques to dynamically extend and shorten different segments of the user's song to fit the ongoing exercise routine. Our system takes as input the rest and work durations to guide adaptation. Currently, this is determined either via a pre-defined plan or manual input during the workout. We evaluated RISE with 12 participants and compared our system to a non-adaptive music baseline while exercising in our lab. Participants found our rearrangements keeps intensity estimation accurate, and many recalled moments when intensity alignment helped them push through their workout.",
+            "award": "",
+            "project_link": "",
+            "blog_link": "",
+            "video_link": "https://www.youtube.com/watch?v=XZLBfpt6Lgg",
+            "code_link": ""
+        },
         {
             "id": "2025magentart",
             "nickname": "Magenta RealTime",
