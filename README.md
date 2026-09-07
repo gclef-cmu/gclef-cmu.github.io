@@ -42,6 +42,7 @@ This repo manages team profiles and publications via JSON files + static assets.
      "authors": "Jane Doe, John Smith, Alex Example",
      "abstract": "This paper explores how interactive AI systems ...",
      "award": "",
+     "pdf_link": "",
      "project_link": "https://example.com/newpaperdemo",
      "blog_link": "",
      "video_link": "https://bit.ly/newpaperdemo-chi2025",
@@ -50,10 +51,11 @@ This repo manages team profiles and publications via JSON files + static assets.
    ```
     
     - `nickname` field is used in the **Recent Highlights** section of `HOME.md`.
+    - `pdf_link` (optional) points the "Paper" button at an external URL (e.g. an arXiv PDF like `https://arxiv.org/pdf/2506.12345`) instead of a locally uploaded file. Leave it `""` or omit it to use the local PDF described below.
 
 3. **Assets (use same `{id}`)**
 
-   * PDF → `static/pdfs/{id}.pdf`
+   * PDF → `static/pdfs/{id}.pdf` (skip this if you set `pdf_link` above)
    * Preview image → `static/previews/{id}.{file_extension}` (e.g., `2025newpaper.png`)
    * BibTeX entry → in `research/bibtex.bib`:
 

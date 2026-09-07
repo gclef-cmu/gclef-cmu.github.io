@@ -506,7 +506,8 @@ async function generateResearchContent(researchData, bibtexData) {
                 html += `    <div class="publication-venue-year">${pub.venue} ${pub.year}</div>\n`;
                 html += `    <div class="publication-links">\n`;
                 
-                html += `      <a href="../static/pdfs/${pub.id}.pdf" class="publication-link" target="_blank"><i class="fa-solid fa-file"></i> Paper</a>\n`;
+                const pubPaperHref = pub.pdf_link || `../static/pdfs/${pub.id}.pdf`;
+                html += `      <a href="${pubPaperHref}" class="publication-link" target="_blank"><i class="fa-solid fa-file"></i> Paper</a>\n`;
                 
                 if (pub.project_link) {
                     html += `      <a href="${pub.project_link}" class="publication-link"><i class="fa-solid fa-house"></i> Website</a>\n`;
@@ -549,7 +550,8 @@ async function generateProjectPageHtml(publication, bibtexData) {
     html += `<div class="project-venue">${publication.venue} ${publication.year}</div>\n\n`;
     
     html += `<div class="project-links">\n`;
-    html += `  <a href="../../static/pdfs/${publication.id}.pdf" class="project-link" target="_blank"><i class="fa-solid fa-file"></i> Paper</a>\n`;
+    const paperHref = publication.pdf_link || `../../static/pdfs/${publication.id}.pdf`;
+    html += `  <a href="${paperHref}" class="project-link" target="_blank"><i class="fa-solid fa-file"></i> Paper</a>\n`;
     
     if (publication.project_link) {
         html += `  <a href="${publication.project_link}" class="project-link"><i class="fa-solid fa-house"></i> Website</a>\n`;

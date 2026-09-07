@@ -7,6 +7,10 @@
 ehthumbs.db
 Thumbs.db
 
+# macOS Finder "Keep Both" duplicates (e.g. "file 2.md", "folder 2")
+* 2.*
+* 2
+
 # Build output
 _site/
 _site/**

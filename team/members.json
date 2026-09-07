@@ -51,8 +51,8 @@
     },
     {
       "name": "Satvik Dixit",
-      "type": "MS Student",
-      "department": "Electrical and Computer Engineering",
+      "type": "Ph.D. Student",
+      "department": "Language and Information Technology",
       "email": "satvikdixit@cmu.edu",
       "website": "https://satvik-dixit.github.io/",
       "photo": "satvik.jpeg"
@@ -67,6 +67,15 @@
     }
   ],
   "alumni": [
+    {
+      "name": "Louis Bradshaw",
+      "type": "Visiting Researcher",
+      "department": "",
+      "email": "",
+      "website": "https://loubbrad.com/",
+      "photo": "",
+      "status": ""
+    },
     {
       "name": "Yichen (William) Huang",
       "type": "Visiting Researcher",
