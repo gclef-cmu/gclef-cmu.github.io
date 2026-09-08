@@ -166,21 +166,6 @@
             "code_link": ""
         },
         {
-            "id": "2026umust",
-            "nickname": "UMusT",
-            "title": "U-must: A unified framework for cross-modal translation of score images, symbolic music, and performance audio",
-            "year": "2026",
-            "venue": "TASLP",
-            "authors": "Jongmin Jung, Dongmin Kim, Sihun Lee, Seola Cho, Hyungjoon Soh, Irmak Bukey, Chris Donahue, Dasaem Jeong",
-            "abstract": "Music exists in various modalities, such as score images, symbolic scores, MIDI, and audio. Translations between such modalities are established as core tasks of music information retrieval, such as automatic music transcription (audio-to-MIDI) and optical music recognition (score image to symbolic score). However, most past work on multimodal translation utilizes specialized models trained for each translation task. In this paper, we propose a unified framework based on a common tokenization strategy. We use dedicated separate models for the Image-to-Audio and Audio-to-Image directions, sharing an identical encoder-decoder architecture to handle each task within a coherent framework. Two key factors make this unified approach viable: a new large-scale dataset, and the tokenization of each modality. Firstly, we propose a new dataset that consists of more than 1,300 hours of paired audio-score image data collected from YouTube videos, which is an order of magnitude larger than any existing music modal translation datasets. Secondly, our unified tokenization framework discretizes score images, audio, MIDI, and MusicXML into a sequence of tokens, enabling standard encoder–decoder Transformers to tackle multiple cross-modal translation as one coherent sequence-to-sequence task. Experimental results confirm that our unified framework improves upon single-task baselines in several key areas, notably reducing the symbol error rate for optical music recognition from 24.58% to a state-of-the-art 13.67%, while also seeing substantial improvements across the other translation tasks. Notably, our approach achieves the first musically-coherent score-image-conditioned audio generation, marking a significant breakthrough in cross-modal music generation.",
-            "award": "",
-            "pdf_link": "https://arxiv.org/pdf/2505.12863",
-            "project_link": "https://sakem.in/u-must/",
-            "blog_link": "",
-            "video_link": "",
-            "code_link": "https://github.com/MALerLab/youtube-score-video-dataset"
-        },
-        {
             "id": "2025rise",
             "nickname": "RISE",
             "title": "RISE: Adaptive music playback for Realtime Intensity Synchronization with Exercise",
@@ -224,6 +209,21 @@
             "blog_link": "/blog/posts/250919_MusicArena/",
             "video_link": "",
             "code_link": ""
+        },
+        {
+            "id": "2025umust",
+            "nickname": "UMusT",
+            "title": "U-must: A unified framework for cross-modal translation of score images, symbolic music, and performance audio",
+            "year": "2025",
+            "venue": "TASLP",
+            "authors": "Jongmin Jung, Dongmin Kim, Sihun Lee, Seola Cho, Hyungjoon Soh, Irmak Bukey, Chris Donahue, Dasaem Jeong",
+            "abstract": "Music exists in various modalities, such as score images, symbolic scores, MIDI, and audio. Translations between such modalities are established as core tasks of music information retrieval, such as automatic music transcription (audio-to-MIDI) and optical music recognition (score image to symbolic score). However, most past work on multimodal translation utilizes specialized models trained for each translation task. In this paper, we propose a unified framework based on a common tokenization strategy. We use dedicated separate models for the Image-to-Audio and Audio-to-Image directions, sharing an identical encoder-decoder architecture to handle each task within a coherent framework. Two key factors make this unified approach viable: a new large-scale dataset, and the tokenization of each modality. Firstly, we propose a new dataset that consists of more than 1,300 hours of paired audio-score image data collected from YouTube videos, which is an order of magnitude larger than any existing music modal translation datasets. Secondly, our unified tokenization framework discretizes score images, audio, MIDI, and MusicXML into a sequence of tokens, enabling standard encoder–decoder Transformers to tackle multiple cross-modal translation as one coherent sequence-to-sequence task. Experimental results confirm that our unified framework improves upon single-task baselines in several key areas, notably reducing the symbol error rate for optical music recognition from 24.58% to a state-of-the-art 13.67%, while also seeing substantial improvements across the other translation tasks. Notably, our approach achieves the first musically-coherent score-image-conditioned audio generation, marking a significant breakthrough in cross-modal music generation.",
+            "award": "",
+            "pdf_link": "https://arxiv.org/pdf/2505.12863",
+            "project_link": "https://sakem.in/u-must/",
+            "blog_link": "",
+            "video_link": "",
+            "code_link": "https://github.com/MALerLab/youtube-score-video-dataset"
         },
         {
             "id": "2025huangaligning",
